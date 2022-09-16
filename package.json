@@ -1,0 +1,17 @@
+{
+  "name": "mfe-archi-poc",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "dev": "turbo run dev --parallel"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "turbo": "latest"
+  }
+}
