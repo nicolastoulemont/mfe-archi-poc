@@ -2,59 +2,40 @@ import { PrismaClient, Prisma } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-const userData: Prisma.UserCreateInput[] = [
+const userData: Prisma.ContactCreateInput[] = [
   {
-    name: 'Alice',
-    email: 'alice@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'Join the Prisma Slack',
-          content: 'https://slack.prisma.io',
-          published: true,
-        },
-      ],
-    },
+    first: 'Nicolas',
+    last: 'Toulemont',
+    avatar: 'https://avatars.githubusercontent.com/u/40027895?v=4',
+    twitter: '@NicoToulemont',
+    favorite: false,
+    notes: 'Engineer',
   },
   {
-    name: 'Nilu',
-    email: 'nilu@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'Follow Prisma on Twitter',
-          content: 'https://www.twitter.com/prisma',
-          published: true,
-        },
-      ],
-    },
+    first: 'Cyril',
+    last: 'Lopez',
+    avatar: 'https://avatars.githubusercontent.com/u/13311463?v=4',
+    twitter: '@soupette',
+    favorite: false,
+    notes: 'Engineer',
   },
   {
-    name: 'Mahmoud',
-    email: 'mahmoud@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'Ask a question about Prisma on GitHub',
-          content: 'https://www.github.com/prisma/prisma/discussions',
-          published: true,
-        },
-        {
-          title: 'Prisma on YouTube',
-          content: 'https://pris.ly/youtube',
-        },
-      ],
-    },
+    first: 'Yann',
+    last: 'Isabel',
+    avatar: 'https://avatars.githubusercontent.com/u/19928886?v=4',
+    twitter: '@yann_isabel',
+    favorite: false,
+    notes: 'Engineer',
   },
 ]
 
 async function main() {
   console.log(`Start seeding ...`)
   for (const u of userData) {
-    const user = await prisma.user.create({
+    const user = await prisma.contact.create({
       data: u,
     })
-    console.log(`Created user with id: ${user.id}`)
+    console.log(`Created contact with id: ${user.id}`)
   }
   console.log(`Seeding finished.`)
 }

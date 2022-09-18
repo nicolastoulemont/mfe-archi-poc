@@ -15,6 +15,7 @@ importers:
       fastify: 4.6.0
       prisma: 4.3.1
       ts-node: 10.9.1
+      ts-node-dev: 2.0.0
       typescript: 4.8.3
     dependencies:
       '@prisma/client': 4.3.1_prisma@4.3.1
@@ -23,6 +24,7 @@ importers:
       '@types/node': 16.11.59
       prisma: 4.3.1
       ts-node: 10.9.1_ao52im6kiihokc7tdj7weudhra
+      ts-node-dev: 2.0.0_ao52im6kiihokc7tdj7weudhra
       typescript: 4.8.3
 
   apps/app1:
@@ -1709,6 +1711,14 @@ packages:
       '@types/node': 18.7.18
     dev: true
 
+  /@types/strip-bom/3.0.0:
+    resolution: {integrity: sha512-xevGOReSYGM7g/kUBZzPqCrR/KYAo+F0yiPc85WFTJa0MSLtyFTVTU6cJu/aV4mid7IffDIWqo69THF2o4JiEQ==}
+    dev: true
+
+  /@types/strip-json-comments/0.0.30:
+    resolution: {integrity: sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==}
+    dev: true
+
   /@types/ws/8.5.3:
     resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
     dependencies:
@@ -2607,6 +2617,12 @@ packages:
     dependencies:
       no-case: 3.0.4
       tslib: 2.4.0
+    dev: true
+
+  /dynamic-dedupe/0.3.0:
+    resolution: {integrity: sha512-ssuANeD+z97meYOqd50e04Ze5qp4bPqo8cCkI4TRjZkzAUgIDTrXV1R8QCdINpiI+hw14+rYazvTRdQrz0/rFQ==}
+    dependencies:
+      xtend: 4.0.2
     dev: true
 
   /eastasianwidth/0.2.0:
@@ -3511,7 +3527,12 @@ packages:
 
   /minimist/1.2.6:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
-    dev: false
+
+  /mkdirp/1.0.4:
+    resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dev: true
 
   /ms/2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
@@ -4157,6 +4178,13 @@ packages:
     resolution: {integrity: sha512-V2hovdzFbOi77/WajaSMXk2OLm+xNIeQdMMuB7icj7bk6zi2F8GGAxigcnDFpJHbNyNcgyJDiP+8nOrY5cZGrA==}
     dev: false
 
+  /rimraf/2.7.1:
+    resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
+    hasBin: true
+    dependencies:
+      glob: 7.2.3
+    dev: true
+
   /rimraf/3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
@@ -4488,6 +4516,11 @@ packages:
       ansi-regex: 6.0.1
     dev: false
 
+  /strip-bom/3.0.0:
+    resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
+    engines: {node: '>=4'}
+    dev: true
+
   /strip-final-newline/2.0.0:
     resolution: {integrity: sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==}
     engines: {node: '>=6'}
@@ -4495,7 +4528,6 @@ packages:
   /strip-json-comments/2.0.1:
     resolution: {integrity: sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==}
     engines: {node: '>=0.10.0'}
-    dev: false
 
   /style-loader/3.3.1_webpack@5.73.0:
     resolution: {integrity: sha512-GPcQ+LDJbrcxHORTRes6Jy2sfvK2kS6hpSfI/fXhPt+spVzxF6LJ1dHLN9zIGmVaaP044YKaIatFaufENRiDoQ==}
@@ -4604,6 +4636,39 @@ packages:
     engines: {node: '>=0.6'}
     dev: true
 
+  /tree-kill/1.2.2:
+    resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
+    hasBin: true
+    dev: true
+
+  /ts-node-dev/2.0.0_ao52im6kiihokc7tdj7weudhra:
+    resolution: {integrity: sha512-ywMrhCfH6M75yftYvrvNarLEY+SUXtUvU8/0Z6llrHQVBx12GiFk5sStF8UdfE/yfzk9IAq7O5EEbTQsxlBI8w==}
+    engines: {node: '>=0.8.0'}
+    hasBin: true
+    peerDependencies:
+      node-notifier: '*'
+      typescript: '*'
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      chokidar: 3.5.3
+      dynamic-dedupe: 0.3.0
+      minimist: 1.2.6
+      mkdirp: 1.0.4
+      resolve: 1.22.1
+      rimraf: 2.7.1
+      source-map-support: 0.5.21
+      tree-kill: 1.2.2
+      ts-node: 10.9.1_ao52im6kiihokc7tdj7weudhra
+      tsconfig: 7.0.0
+      typescript: 4.8.3
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - '@types/node'
+    dev: true
+
   /ts-node/10.9.1_ao52im6kiihokc7tdj7weudhra:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
@@ -4633,6 +4698,15 @@ packages:
       typescript: 4.8.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+    dev: true
+
+  /tsconfig/7.0.0:
+    resolution: {integrity: sha512-vZXmzPrL+EmC4T/4rVlT2jNVMWCi/O4DIiSj3UHg1OE5kCKbk4mfrXc6dZksLgRM/TZlKnousKH9bbTazUWRRw==}
+    dependencies:
+      '@types/strip-bom': 3.0.0
+      '@types/strip-json-comments': 0.0.30
+      strip-bom: 3.0.0
+      strip-json-comments: 2.0.1
     dev: true
 
   /tslib/2.4.0:
@@ -5099,6 +5173,11 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+    dev: true
+
+  /xtend/4.0.2:
+    resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
+    engines: {node: '>=0.4'}
     dev: true
 
   /yallist/4.0.0:
