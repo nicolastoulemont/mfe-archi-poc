@@ -1,31 +1,5 @@
-[32mshell:build[0m: cache hit, replaying output [2med341e127ecc8530[0m
-[32mshell:build: [0m
-[32mshell:build: [0m> shell@1.0.0 build /Users/nicolastoulemont/Code/mfe-archi-poc/apps/shell
-[32mshell:build: [0m> webpack --mode production
-[32mshell:build: [0m
-[32mshell:build: [0massets by chunk 147 KiB (id hint: vendors)
-[32mshell:build: [0m  asset 730.js 130 KiB [compared for emit] [minimized] (id hint: vendors) 1 related asset
-[32mshell:build: [0m  asset 960.js 11.4 KiB [compared for emit] [minimized] (id hint: vendors) 1 related asset
-[32mshell:build: [0m  asset 455.js 5.74 KiB [compared for emit] [minimized] (id hint: vendors)
-[32mshell:build: [0masset main.js 7.37 KiB [compared for emit] [minimized] (name: main)
-[32mshell:build: [0masset 983.js 6.42 KiB [compared for emit] [minimized] 1 related asset
-[32mshell:build: [0masset 973.js 5.33 KiB [compared for emit] [minimized]
-[32mshell:build: [0masset 359.js 802 bytes [compared for emit] [minimized]
-[32mshell:build: [0masset 580.js 802 bytes [compared for emit] [minimized]
-[32mshell:build: [0masset index.html 267 bytes [compared for emit]
-[32mshell:build: [0mruntime modules 19.2 KiB 13 modules
-[32mshell:build: [0morphan modules 37.3 KiB [orphan] 6 modules
-[32mshell:build: [0mbuilt modules 225 KiB (javascript) 180 bytes (share-init) 168 bytes (consume-shared) 12 bytes (remote) [built]
-[32mshell:build: [0m  javascript modules 225 KiB 25 modules
-[32mshell:build: [0m  provide-module modules 168 bytes
-[32mshell:build: [0m    provide shared module (default) history@5.3.0 = ../../node_modules/.pnpm/history@5.3.0/node_modules/history/index.js 42 bytes [built] [code generated]
-[32mshell:build: [0m    provide shared module (default) react-dom@18.2.0 = ../../node_modules/.pnpm/react-dom@18.2.0_react@18.2.0/node_modules/react-dom/index.js 42 bytes [built] [code generated]
-[32mshell:build: [0m    + 2 modules
-[32mshell:build: [0m  consume-shared-module modules 168 bytes
-[32mshell:build: [0m    consume shared module (default) react@^18.2.0 (singleton) (fallback: ../../node_modules/.pnpm/react@18.2.0/node_modules/react/index.js) 42 bytes [built] [code generated]
-[32mshell:build: [0m    consume shared module (default) history@=5.3.0 (strict) (fallback: ../../node_modules/.pnpm/history@5.3.0/node_modules/history/index.js) 42 bytes [built] [code generated]
-[32mshell:build: [0m    + 2 modules
-[32mshell:build: [0m  remote-module modules 12 bytes (remote) 12 bytes (share-init)
-[32mshell:build: [0m    remote app1/App1Index 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
-[32mshell:build: [0m    remote app2/App2Index 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
-[32mshell:build: [0mwebpack 5.73.0 compiled successfully in 2744 ms
+[33mshell:build[0m: cache hit, replaying output [2m94e1cd9b4f6c4516[0m
+[33mshell:build: [0m
+[33mshell:build: [0m> shell@1.0.0 build /Users/nicolastoulemont/Code/mfe-archi-poc/apps/shell
+[33mshell:build: [0m> webpack --mode production
+[33mshell:build: [0m

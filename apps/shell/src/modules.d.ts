@@ -1,3 +1,4 @@
+declare module 'sort-by'
 declare module 'app1/App1Index' {
   export interface AppOneConfig {
     title: string

@@ -1,0 +1,5 @@
+[32m@mfe-archi-poc/query:build[0m: cache hit, replaying output [2m1ca748395044a5ea[0m
+[32m@mfe-archi-poc/query:build: [0m
+[32m@mfe-archi-poc/query:build: [0m> @mfe-archi-poc/query@1.0.0 build /Users/nicolastoulemont/Code/mfe-archi-poc/packages/query
+[32m@mfe-archi-poc/query:build: [0m> tsc -b
+[32m@mfe-archi-poc/query:build: [0m
