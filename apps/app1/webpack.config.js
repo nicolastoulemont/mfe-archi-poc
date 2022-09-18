@@ -60,6 +60,10 @@ module.exports = {
           singleton: true,
           requiredVersion: deps['react-dom'],
         },
+        'react-router-dom': {
+          singleton: true,
+          requiredVersion: deps['react-router-dom'],
+        },
         '@mfe-archi-poc/query': {
           singleton: true,
           requiredVersion: deps['@mfe-archi-poc/query'],
