@@ -9,10 +9,6 @@
     "dev": "tsc -w"
   },
   "license": "MIT",
-  "author": {
-    "name": "Nicolas Toulemont",
-    "email": "n.toulemont@gmail.com"
-  },
   "devDependencies": {
     "typescript": "4.8.3"
   },
