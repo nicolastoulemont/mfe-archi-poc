@@ -16,7 +16,6 @@ const contactListQuery = (q: string | null) => ({
 export const loader =
   (queryClient: QueryClientType) =>
   async ({ request }: LoaderFunctionArgs) => {
-    console.log('loader running')
     const url = new URL(request.url)
     const q = url.searchParams.get('q') ?? ''
     const query = contactListQuery(q)
@@ -29,7 +28,6 @@ export const loader =
 export const action =
   (queryClient: QueryClientType) =>
   async ({}) => {
-    console.log('action running')
     const contact = await createContact()
     await queryClient.invalidateQueries(['contacts'])
     return redirect(`/contacts/${contact.id}/edit`)

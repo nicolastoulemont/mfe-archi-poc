@@ -53,11 +53,11 @@ export default function Contact() {
     initialData,
   })
 
+  if (!contact) return null
+
   return (
     <div id='contact'>
-      <div>
-        <img key={contact.avatar} src={contact.avatar} />
-      </div>
+      <div>{contact.avatar ? <img key={contact.avatar} src={contact.avatar} /> : null}</div>
 
       <div>
         <h1>
@@ -105,9 +105,6 @@ export default function Contact() {
 function Favorite({ contact }: { contact: Contact }) {
   const fetcher = useFetcher()
   let favorite = contact.favorite
-  // if (fetcher.formData) {
-  //   favorite = fetcher.formData.get('favorite') === 'true'
-  // }
 
   return (
     <fetcher.Form method='post'>

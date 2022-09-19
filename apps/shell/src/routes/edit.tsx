@@ -25,7 +25,6 @@ export const action =
   async ({ request, params }: ActionFunctionArgs) => {
     const formData = await request.formData()
     const updates = Object.fromEntries(formData)
-    console.log('action', updates)
     await updateContact(params.contactId as string, updates)
     await queryClient.invalidateQueries(['contacts'])
     return redirect(`/contacts/${params.contactId}`)
