@@ -1,10 +1,10 @@
 import { Form, useLoaderData, useFetcher, ActionFunctionArgs, useParams } from 'react-router-dom'
 import type { LoaderFunctionArgs } from 'react-router-dom'
-import { getContact, updateContact } from '../contacts'
+import { getContact, updateContact } from '../http'
 import type { LoaderType } from '../types'
 
 import type { QueryClientType } from '@mfe-archi-poc/query'
-import { useQuery } from '@mfe-archi-poc/query'
+import { useQuery, queryClient } from '@mfe-archi-poc/query'
 
 export interface Contact {
   id: number
@@ -22,7 +22,7 @@ export const contactDetailQuery = (id: string) => ({
   queryFn: async () => getContact(id),
 })
 
-export const loader =
+const loader =
   (queryClient: QueryClientType) =>
   async ({ params }: LoaderFunctionArgs) => {
     const query = contactDetailQuery(params.contactId as string)
@@ -36,7 +36,7 @@ export const loader =
     return contact
   }
 
-export const action =
+const action =
   (queryClient: QueryClientType) =>
   async ({ request, params }: ActionFunctionArgs) => {
     const formData = await request.formData()
@@ -45,7 +45,7 @@ export const action =
     return contact
   }
 
-export default function Contact() {
+function Contact() {
   const initialData = useLoaderData() as LoaderType<typeof loader>
   const params = useParams()
   const { data: contact } = useQuery({
@@ -117,4 +117,11 @@ function Favorite({ contact }: { contact: Contact }) {
       </button>
     </fetcher.Form>
   )
+}
+
+export const contactRoute = {
+  path: 'contacts/:contactId',
+  element: <Contact />,
+  loader: loader(queryClient),
+  action: action(queryClient),
 }

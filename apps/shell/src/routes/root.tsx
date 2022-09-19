@@ -1,8 +1,8 @@
 import { Outlet, useNavigation, useLoaderData, Form, redirect, NavLink, useSubmit } from 'react-router-dom'
 import type { LoaderFunctionArgs } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
-import { createContact, getContacts } from '../contacts'
-import { Contact } from './contact'
+import { createContact, getContacts } from '../http'
+import type { Contact } from '../http'
 import { LoaderType } from '../types'
 
 import type { QueryClientType } from '@mfe-archi-poc/query'
