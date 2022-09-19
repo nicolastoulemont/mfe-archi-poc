@@ -8,6 +8,7 @@
     "dev": "tsnd src/index.ts"
   },
   "dependencies": {
+    "@fastify/cors": "^8.1.0",
     "@prisma/client": "4.3.1",
     "fastify": "4.6.0"
   },

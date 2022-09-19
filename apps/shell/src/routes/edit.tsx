@@ -1,22 +1,43 @@
-import { Form, useLoaderData, redirect, useNavigate } from 'react-router-dom'
+import { Form, useLoaderData, redirect, useNavigate, useParams } from 'react-router-dom'
 import type { LoaderFunctionArgs, ActionFunctionArgs } from 'react-router-dom'
-import { getContact, updateContact } from '../contacts'
+import { updateContact } from '../contacts'
 import type { Contact } from './contact'
+import { QueryClientType, useQuery } from '@mfe-archi-poc/query'
+import { contactDetailQuery } from './contact'
+import { LoaderType } from '../types'
 
-export function loader({ params }: LoaderFunctionArgs) {
-  console.log('edit loader running')
-  return getContact(params.contactId as string)
-}
+export const loader =
+  (queryClient: QueryClientType) =>
+  async ({ params }: LoaderFunctionArgs) => {
+    const query = contactDetailQuery(params.contactId as string)
+    const contact = queryClient.getQueryData<Contact>(query.queryKey) ?? (await queryClient.fetchQuery<Contact>(query))
+    if (!contact) {
+      throw new Response('', {
+        status: 404,
+        statusText: 'Not Found',
+      })
+    }
+    return contact
+  }
 
-export async function action({ request, params }: ActionFunctionArgs) {
-  const formData = await request.formData()
-  const updates = Object.fromEntries(formData)
-  await updateContact(params.contactId as string, updates)
-  return redirect(`/contacts/${params.contactId}`)
-}
+export const action =
+  (queryClient: QueryClientType) =>
+  async ({ request, params }: ActionFunctionArgs) => {
+    const formData = await request.formData()
+    const updates = Object.fromEntries(formData)
+    console.log('action', updates)
+    await updateContact(params.contactId as string, updates)
+    await queryClient.invalidateQueries(['contacts'])
+    return redirect(`/contacts/${params.contactId}`)
+  }
 
 export default function Edit() {
-  const contact = useLoaderData() as Contact
+  const initialData = useLoaderData() as LoaderType<typeof loader>
+  const params = useParams()
+  const { data: contact } = useQuery({
+    ...contactDetailQuery(params.contactId as string),
+    initialData,
+  })
   const navigate = useNavigate()
 
   return (

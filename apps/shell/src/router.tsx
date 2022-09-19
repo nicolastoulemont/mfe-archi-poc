@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
             path: 'contacts/:contactId/edit',
             element: <EditContact />,
             loader: contactLoader(queryClient),
-            action: editAction,
+            action: editAction(queryClient),
           },
           {
             path: 'contacts/:contactId/destroy',

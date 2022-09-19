@@ -1,79 +1,38 @@
-import localforage from 'localforage'
 import { matchSorter } from 'match-sorter'
 import sortBy from 'sort-by'
+import { Contact } from './routes/contact'
+
+const API_URL = 'http://localhost:3000'
 
 export async function getContacts(query?: any) {
-  await fakeNetwork(`getContacts:${query}`)
-  let contacts = (await localforage.getItem('contacts')) as Array<any>
-  if (!contacts) contacts = []
+  const res = await fetch(`${API_URL}/contacts${query ? `?search=${query}` : ''}`)
+  const contacts: Contact[] = await res.json()
   if (query) {
-    contacts = matchSorter(contacts, query, { keys: ['first', 'last'] })
+    return matchSorter(contacts, query, { keys: ['first', 'last'] })
   }
   return contacts.sort(sortBy('last', 'createdAt'))
 }
 
 export async function createContact() {
-  await fakeNetwork()
-  let id = Math.random().toString(36).substring(2, 9)
-  let contact = { id, createdAt: Date.now() }
-  let contacts = await getContacts()
-  contacts.unshift(contact)
-  await set(contacts)
+  const res = await fetch(`${API_URL}/contact`, { method: 'post' })
+  const contact: Pick<Contact, 'id' | 'createdAt'> = await res.json()
   return contact
 }
 
 export async function getContact(id: string) {
-  await fakeNetwork(`contact:${id}`)
-  let contacts = (await localforage.getItem('contacts')) as Array<any>
-  let contact = contacts.find((contact) => contact.id === id)
-  return contact ?? null
+  const res = await fetch(`${API_URL}/contact/${id}`)
+  const contact: Contact = await res.json()
+  return contact
 }
 
-export async function updateContact(id: string, updates: any) {
-  await fakeNetwork()
-  let contacts = (await localforage.getItem('contacts')) as Array<any>
-  let contact = contacts.find((contact) => contact.id === id)
-  // @ts-expect-error
-  if (!contact) throw new Error('No contact found for', id)
-  Object.assign(contact, updates)
-  await set(contacts)
+export async function updateContact(id: string, updates: Partial<Contact>) {
+  const res = await fetch(`${API_URL}/contact/${id}`, { method: 'put', body: JSON.stringify(updates) })
+  const contact: Contact = await res.json()
   return contact
 }
 
 export async function deleteContact(id: string) {
-  let contacts = (await localforage.getItem('contacts')) as Array<any>
-  let index = contacts.findIndex((contact) => contact.id === id)
-  if (index > -1) {
-    contacts.splice(index, 1)
-    await set(contacts)
-    return true
-  }
-  return false
-}
-
-function set(contacts: Array<any>) {
-  return localforage.setItem('contacts', contacts)
-}
-
-// fake a cache so we don't slow down stuff we've already seen
-// let fakeCache = {}
-
-async function fakeNetwork(key?: any) {
-  // if (!key) {
-  //   fakeCache = {}
-  // }
-
-  // // @ts-expect-error
-  // if (fakeCache[key]) {
-  //   return
-  // }
-
-  // // @ts-expect-error
-  // fakeCache[key] = true
-  return new Promise((res) => {
-    setTimeout(res, 1000)
-  })
-  // return new Promise((res) => {
-  //   setTimeout(res, Math.random() * 800)
-  // })
+  const res = await fetch(`${API_URL}/contact/${id}`, { method: 'delete' })
+  const contact: Contact = await res.json()
+  return contact
 }

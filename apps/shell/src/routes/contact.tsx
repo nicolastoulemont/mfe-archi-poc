@@ -7,6 +7,8 @@ import type { QueryClientType } from '@mfe-archi-poc/query'
 import { useQuery } from '@mfe-archi-poc/query'
 
 export interface Contact {
+  id: number
+  createdAt: Date
   first?: string
   last?: string
   avatar: string
@@ -15,7 +17,7 @@ export interface Contact {
   favorite: boolean
 }
 
-const contactDetailQuery = (id: string) => ({
+export const contactDetailQuery = (id: string) => ({
   queryKey: ['contacts', 'detail', id],
   queryFn: async () => getContact(id),
 })
