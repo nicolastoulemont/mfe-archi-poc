@@ -1,11 +1,11 @@
 import { Form, useLoaderData, redirect, useNavigate, useParams } from 'react-router-dom'
 import type { LoaderFunctionArgs, ActionFunctionArgs } from 'react-router-dom'
-import { updateContact } from '../http'
-import type { Contact } from './contact'
+import { updateContact } from './EditContact.http'
+import type { Contact } from '../contact'
 import type { QueryClientType } from '@mfe-archi-poc/query'
-import { useQuery, queryClient } from '@mfe-archi-poc/query'
-import { contactDetailQuery } from './contact'
-import { LoaderType } from '../types'
+import { useQuery } from '@mfe-archi-poc/query'
+import { contactDetailQuery } from '../contact'
+import { LoaderType } from '../../types'
 
 export const loader =
   (queryClient: QueryClientType) =>
@@ -31,7 +31,7 @@ export const action =
     return redirect(`/contacts/${params.contactId}`)
   }
 
-export default function Edit() {
+export function EditContact() {
   const initialData = useLoaderData() as LoaderType<typeof loader>
   const params = useParams()
   const { data: contact } = useQuery({
@@ -78,11 +78,4 @@ export default function Edit() {
       </p>
     </Form>
   )
-}
-
-export const editRoute = {
-  path: 'contacts/:contactId/edit',
-  element: <Edit />,
-  loader: loader(queryClient),
-  action: action(queryClient),
 }
