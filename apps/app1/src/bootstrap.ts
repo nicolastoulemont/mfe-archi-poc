@@ -1,3 +1,5 @@
-export { destroyRoute } from './routes/destroy'
-export { contactRoute } from './routes/contact'
-export { editRoute } from './routes/edit'
+import { destroyRoute } from './routes/destroy'
+import { contactRoute } from './routes/contact'
+import { editRoute } from './routes/edit'
+
+export default [contactRoute, editRoute, destroyRoute]
