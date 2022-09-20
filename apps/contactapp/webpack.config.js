@@ -44,11 +44,11 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'app1',
+      name: 'contactapp',
       filename: 'remoteEntry.js',
       remotes: {},
       exposes: {
-        './App1Index': './src/bootstrap',
+        '.': './src/bootstrap',
       },
       shared: {
         ...deps,

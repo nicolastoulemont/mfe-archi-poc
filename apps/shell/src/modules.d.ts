@@ -1,5 +1,5 @@
 declare module 'sort-by'
-declare module 'app1/App1Index' {
+declare module 'contactapp' {
   import { RouteObject } from 'react-router-dom'
   const destroyRoute: RouteObject
   const contactRoute: RouteObject

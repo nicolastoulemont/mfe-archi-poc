@@ -4,7 +4,7 @@ import Root, { loader as rootLoader, action as rootAction } from './routes/root'
 import Index from './routes/index'
 import ErrorPage from './error-page'
 import { queryClient } from '@mfe-archi-poc/query'
-import contactRoutes from 'app1/App1Index'
+import contactRoutes from 'contactapp'
 
 export const router = createBrowserRouter([
   {
