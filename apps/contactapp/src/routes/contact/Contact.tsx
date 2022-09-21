@@ -5,14 +5,18 @@ import type { LoaderType } from '../../types'
 
 import type { QueryClientType } from '@mfe-archi-poc/query'
 import { useQuery } from '@mfe-archi-poc/query'
-import { Contact } from './Contact.types'
+import { IContact } from './Contact.types'
 import { contactDetailQuery } from './Contact.http'
+
+import './Contact.css'
 
 export const loader =
   (queryClient: QueryClientType) =>
   async ({ params }: LoaderFunctionArgs) => {
+    console.log(params)
     const query = contactDetailQuery(params.contactId as string)
-    const contact = queryClient.getQueryData<Contact>(query.queryKey) ?? (await queryClient.fetchQuery<Contact>(query))
+    const contact =
+      queryClient.getQueryData<IContact>(query.queryKey) ?? (await queryClient.fetchQuery<IContact>(query))
     if (!contact) {
       throw new Response('', {
         status: 404,
@@ -88,7 +92,7 @@ export function Contact() {
   )
 }
 
-function Favorite({ contact }: { contact: Contact }) {
+function Favorite({ contact }: { contact: IContact }) {
   const fetcher = useFetcher()
   let favorite = contact.favorite
 

@@ -31,6 +31,8 @@
     "babel-loader": "8.2.5",
     "css-loader": "6.7.1",
     "html-webpack-plugin": "5.5.0",
+    "msw": "^0.47.3",
+    "msw-storybook-addon": "^1.6.3",
     "postcss": "8.4.16",
     "postcss-loader": "4.3.0",
     "style-loader": "3.3.1",

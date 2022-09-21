@@ -1,7 +1,7 @@
 import { Form, useLoaderData, redirect, useNavigate, useParams } from 'react-router-dom'
 import type { LoaderFunctionArgs, ActionFunctionArgs } from 'react-router-dom'
 import { updateContact } from './EditContact.http'
-import type { Contact } from '../contact'
+import type { IContact } from '../contact'
 import type { QueryClientType } from '@mfe-archi-poc/query'
 import { useQuery } from '@mfe-archi-poc/query'
 import { contactDetailQuery } from '../contact'
@@ -11,7 +11,8 @@ export const loader =
   (queryClient: QueryClientType) =>
   async ({ params }: LoaderFunctionArgs) => {
     const query = contactDetailQuery(params.contactId as string)
-    const contact = queryClient.getQueryData<Contact>(query.queryKey) ?? (await queryClient.fetchQuery<Contact>(query))
+    const contact =
+      queryClient.getQueryData<IContact>(query.queryKey) ?? (await queryClient.fetchQuery<IContact>(query))
     if (!contact) {
       throw new Response('', {
         status: 404,

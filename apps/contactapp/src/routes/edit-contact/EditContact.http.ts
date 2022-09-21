@@ -1,8 +1,8 @@
 import { API_URL } from '../../constant'
-import { Contact } from '../contact'
+import { IContact } from '../contact'
 
-export async function updateContact(id: string, updates: Partial<Contact>) {
+export async function updateContact(id: string, updates: Partial<IContact>) {
   const res = await fetch(`${API_URL}/contact/${id}`, { method: 'put', body: JSON.stringify(updates) })
-  const contact: Contact = await res.json()
+  const contact: IContact = await res.json()
   return contact
 }
