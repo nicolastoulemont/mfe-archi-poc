@@ -4,13 +4,14 @@ import fastify from 'fastify'
 import cors from '@fastify/cors'
 
 const prisma = new PrismaClient()
+const app = fastify()
 
 type IContactByIdParam = Pick<Contact, 'id'>
 type IContactByNameQuery = { search: string | null }
 type IContactByIdBody = Omit<Contact, 'id'>
 
 async function main() {
-  const app = fastify()
+  // const app = fastify()
   await app.register(cors, {
     origin: '*',
   })

@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "build": "tsc -b",
-    "dev": "tsnd src/index.ts"
+    "dev": "tsnd --exit-child src/index.ts"
   },
   "dependencies": {
     "@fastify/cors": "^8.1.0",
