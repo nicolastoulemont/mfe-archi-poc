@@ -39,7 +39,6 @@ Default.parameters = {
   msw: {
     handlers: [
       rest.get('http://localhost:3000/contact/1', (req, res, ctx) => {
-        console.log('running msw')
         return res(
           ctx.json({
             first: 'Nicolas',
