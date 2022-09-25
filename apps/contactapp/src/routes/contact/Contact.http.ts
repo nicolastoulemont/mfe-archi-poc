@@ -4,15 +4,11 @@ import { IContact } from './Contact.types'
 export const contactDetailQuery = (id: string) => ({
   queryKey: ['contacts', 'detail', id],
   queryFn: async () => getContact(id),
+  staleTime: 30 * 1000,
 })
 
 export async function getContact(id: string): Promise<IContact> {
-  try {
-    const res = await fetch(`${API_URL}/contact/${id}`)
-    const contact: IContact = await res.json()
-    return contact
-  } catch (error) {
-    console.error(error)
-    return {} as IContact
-  }
+  const res = await fetch(`${API_URL}/contact/${id}`)
+  const contact: IContact = await res.json()
+  return contact
 }

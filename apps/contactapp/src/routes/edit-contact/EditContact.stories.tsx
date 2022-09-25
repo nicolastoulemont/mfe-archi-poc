@@ -1,24 +1,24 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { Contact, action, loader } from './Contact'
+import { EditContact, action, loader } from './EditContact'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
 import { queryClient } from '@mfe-archi-poc/query'
 
 export default {
-  title: 'Contact/Display',
-  component: Contact,
+  title: 'Contact/Edit',
+  component: EditContact,
   decorators: [
     (Story) => (
       <RouterProvider
         router={createMemoryRouter(
           [
             {
-              path: '/contacts/:contactId',
+              path: '/contacts/:contactId/edit',
               element: <Story />,
               action: action(queryClient),
               loader: loader(queryClient),
             },
           ],
-          { initialEntries: ['/contacts/1'], initialIndex: 0 }
+          { initialEntries: ['/contacts/1/edit'], initialIndex: 0 }
         )}
       />
     ),
@@ -26,8 +26,8 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof Contact>
+} as ComponentMeta<typeof EditContact>
 
-const Template: ComponentStory<typeof Contact> = (args: any) => <Contact {...args} />
+const Template: ComponentStory<typeof EditContact> = (args: any) => <EditContact {...args} />
 
 export const Default = Template.bind({})

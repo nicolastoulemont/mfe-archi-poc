@@ -1,18 +1,16 @@
-import { Form, useLoaderData, redirect, useNavigate, useParams } from 'react-router-dom'
+import { Form, redirect, useNavigate, useParams } from 'react-router-dom'
 import type { LoaderFunctionArgs, ActionFunctionArgs } from 'react-router-dom'
 import { updateContact } from './EditContact.http'
 import type { IContact } from '../contact'
 import type { QueryClientType } from '@mfe-archi-poc/query'
 import { useQuery } from '@mfe-archi-poc/query'
 import { contactDetailQuery } from '../contact'
-import { LoaderType } from '../../types'
 
 export const loader =
   (queryClient: QueryClientType) =>
   async ({ params }: LoaderFunctionArgs) => {
     const query = contactDetailQuery(params.contactId as string)
-    const contact =
-      queryClient.getQueryData<IContact>(query.queryKey) ?? (await queryClient.fetchQuery<IContact>(query))
+    const contact = await queryClient.fetchQuery<IContact>(query)
     if (!contact) {
       throw new Response('', {
         status: 404,
@@ -33,13 +31,11 @@ export const action =
   }
 
 export function EditContact() {
-  const initialData = useLoaderData() as LoaderType<typeof loader>
   const params = useParams()
-  const { data: contact } = useQuery({
-    ...contactDetailQuery(params.contactId as string),
-    initialData,
-  })
+  const { data: contact } = useQuery(contactDetailQuery(params.contactId as string))
   const navigate = useNavigate()
+
+  if (!contact) return null
 
   return (
     <Form method='post' id='contact-form'>

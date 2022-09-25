@@ -13,7 +13,9 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <QueryClientProvider client={queryClient}>
-      <Story />
+      <div style={{ padding: '3em' }}>
+        <Story />
+      </div>
     </QueryClientProvider>
   ),
 ]
