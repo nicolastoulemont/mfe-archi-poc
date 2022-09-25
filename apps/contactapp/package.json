@@ -8,6 +8,7 @@
     "dev": "webpack serve --open --mode development",
     "dev:live": "webpack serve --open --mode development --live-reload --hot",
     "storybook": "start-storybook -p 6006",
+    "storybook:mock": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook"
   },
   "license": "MIT",
@@ -48,5 +49,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0",
     "serve": "14.0.1"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

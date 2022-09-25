@@ -1,4 +1,5 @@
 import { queryClient, QueryClientProvider } from '@mfe-archi-poc/query'
+import { initialize, mswDecorator } from 'msw-storybook-addon'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -10,7 +11,10 @@ export const parameters = {
   },
 }
 
+initialize()
+
 export const decorators = [
+  mswDecorator,
   (Story) => (
     <QueryClientProvider client={queryClient}>
       <div style={{ padding: '3em' }}>
