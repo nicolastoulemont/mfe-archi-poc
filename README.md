@@ -9,5 +9,5 @@ It aims to test the following things in order to help large engineering teams sp
   - [x] storybook reactreact setup
   - [x] storybook msw (http mocking layer)
 
-- [ ] how to share a client side http caching library instance between the shell and the sub-apps.
+- [x] how to share a client side http caching library instance between the shell and the sub-apps.
 - [ ] how to share a global state management library between the shell and the sub-apps.

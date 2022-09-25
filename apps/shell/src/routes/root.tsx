@@ -11,6 +11,7 @@ import { useQuery } from '@mfe-archi-poc/query'
 const contactListQuery = (q: string | null) => ({
   queryKey: ['contacts', 'list', q],
   queryFn: async () => getContacts(q),
+  staleTime: 30 * 1000,
 })
 
 export const loader =
@@ -19,9 +20,7 @@ export const loader =
     const url = new URL(request.url)
     const q = url.searchParams.get('q') ?? ''
     const query = contactListQuery(q)
-    const contacts =
-      queryClient.getQueryData<Contact[]>(query.queryKey) ?? (await queryClient.fetchQuery<Contact[]>(query))
-
+    const contacts = await queryClient.fetchQuery<Contact[]>(query)
     return { contacts, q }
   }
 
