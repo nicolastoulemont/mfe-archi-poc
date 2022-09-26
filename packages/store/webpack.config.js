@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const deps = require('./package.json').dependencies
 module.exports = {
   output: {
-    publicPath: 'http://localhost:8081/',
+    publicPath: 'http://localhost:8082/',
   },
 
   resolve: {
@@ -12,7 +12,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 8081,
+    port: 8082,
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
@@ -21,17 +21,6 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.m?js/,
-        type: 'javascript/auto',
-        resolve: {
-          fullySpecified: false,
-        },
-      },
-      {
-        test: /\.(css|s[ac]ss)$/i,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
-      },
       {
         test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
@@ -44,13 +33,11 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'contactapp',
+      name: 'store',
       filename: 'remoteEntry.js',
-      remotes: {
-        store: 'store@http://localhost:8082/remoteEntry.js',
-      },
+      remotes: {},
       exposes: {
-        '.': './src/bootstrap',
+        './store': './src/index',
       },
       shared: {
         ...deps,
@@ -61,14 +48,6 @@ module.exports = {
         'react-dom': {
           singleton: true,
           requiredVersion: deps['react-dom'],
-        },
-        'react-router-dom': {
-          singleton: true,
-          requiredVersion: deps['react-router-dom'],
-        },
-        '@mfe-archi-poc/query': {
-          singleton: true,
-          requiredVersion: deps['@mfe-archi-poc/query'],
         },
       },
     }),

@@ -48,6 +48,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         contactapp: 'contactapp@http://localhost:8081/remoteEntry.js',
+        store: 'store@http://localhost:8082/remoteEntry.js',
       },
       exposes: {},
       shared: {

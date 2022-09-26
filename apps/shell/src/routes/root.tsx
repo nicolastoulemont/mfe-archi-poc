@@ -5,6 +5,8 @@ import { createContact, getContacts } from '../http'
 import type { Contact } from '../http'
 import { LoaderType } from '../types'
 
+import { useStore } from 'store/store'
+
 import type { QueryClientType } from '@mfe-archi-poc/query'
 import { useQuery } from '@mfe-archi-poc/query'
 
@@ -50,7 +52,7 @@ export default function Root() {
   const navigation = useNavigation()
   const submit = useSubmit()
   useInputSync(inputRef, initialData.q ?? '')
-
+  const { count, increment } = useStore()
   const searching = navigation.location && new URLSearchParams(navigation.location.search).has('q')
 
   return (
@@ -108,6 +110,8 @@ export default function Root() {
               <i>No contacts</i>
             </p>
           )}
+          <p>count {count}</p>
+          <button onClick={increment}>increment</button>
         </nav>
       </div>
       <div id='detail' className={navigation.state === 'loading' ? 'loading' : ''}>
