@@ -5,7 +5,7 @@ import { createContact, getContacts } from '../http'
 import type { Contact } from '../http'
 import { LoaderType } from '../types'
 
-import { useStore } from 'store/store'
+import { useStore } from 'store'
 
 import type { QueryClientType } from '@mfe-archi-poc/query'
 import { useQuery } from '@mfe-archi-poc/query'

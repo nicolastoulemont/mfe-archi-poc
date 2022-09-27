@@ -6,11 +6,9 @@ module.exports = {
   output: {
     publicPath: 'http://localhost:8082/',
   },
-
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
   },
-
   devServer: {
     port: 8082,
     historyApiFallback: true,
@@ -18,7 +16,6 @@ module.exports = {
       'Access-Control-Allow-Origin': '*',
     },
   },
-
   module: {
     rules: [
       {
@@ -37,7 +34,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {},
       exposes: {
-        './store': './src/index',
+        '.': './src/index',
       },
       shared: {
         ...deps,

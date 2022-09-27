@@ -6,3 +6,5 @@ declare module 'contactapp' {
   const editRoute: RouteObject
   export default [contactRoute, editRoute, destroyRoute]
 }
+
+declare module 'store'
