@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "build/index.js",
+  "workspaces": {
+    "nohoist": [
+      "prisma",
+      "@prisma/client"
+    ]
+  },
   "scripts": {
     "build": "tsc -b",
     "dev": "tsnd --exit-child src/index.ts"
