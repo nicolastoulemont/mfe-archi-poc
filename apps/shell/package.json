@@ -5,9 +5,10 @@
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "start": "cd dist && PORT=8080 npx serve",
-    "dev": "webpack serve --open --mode development",
-    "dev2": "webpack serve",
+    "dev": "concurrently \"yarn dev:types\" \"yarn dev:start\"",
+    "dev:start": "webpack serve --open --mode development",
     "dev:live": "webpack serve --open --mode development --live-reload --hot",
+    "dev:types": "make-federated-types",
     "clean": "rm -rf dist"
   },
   "license": "MIT",
@@ -18,10 +19,12 @@
     "@babel/preset-react": "7.18.6",
     "@babel/preset-typescript": "7.18.6",
     "@babel/runtime": "7.19.0",
+    "@pixability-ui/federated-types": "^0.2.0",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "10.4.8",
     "babel-loader": "8.2.5",
+    "concurrently": "^7.4.0",
     "css-loader": "6.7.1",
     "html-webpack-plugin": "5.5.0",
     "postcss": "8.4.16",
@@ -30,8 +33,7 @@
     "typescript": "4.8.3",
     "webpack": "5.74.0",
     "webpack-cli": "4.10.0",
-    "webpack-dev-server": "4.11.1",
-    "webpack-remote-types-plugin": "0.2.7"
+    "webpack-dev-server": "4.11.1"
   },
   "dependencies": {
     "@mfe-archi-poc/query": "1.0.0",

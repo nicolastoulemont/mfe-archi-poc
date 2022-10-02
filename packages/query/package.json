@@ -5,8 +5,7 @@
   "types": "build/index.d.ts",
   "scripts": {
     "clean": "rm -rf ./build",
-    "build": "yarn clean && tsc -b",
-    "dev": "tsc -w"
+    "build": "yarn clean && tsc -b"
   },
   "license": "MIT",
   "devDependencies": {

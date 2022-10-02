@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
-const path = require('path')
+const federation = require('./federation.config.json')
 
 const deps = require('./package.json').dependencies
 module.exports = {
@@ -40,32 +40,14 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
-      // {
-      //   test: /\.tsx?$/,
-      //   exclude: /node_modules/,
-      //   use: [
-      //     {
-      //       loader: 'dts-loader',
-      //       options: {
-      //         name: 'contactapp', // The name configured in ModuleFederationPlugin
-      //         exposes: {
-      //           '.': './src/bootstrap',
-      //         },
-      //       },
-      //     },
-      //   ],
-      // },
     ],
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'contactapp',
+      ...federation,
       filename: 'remoteEntry.js',
       remotes: {
         store: 'store@http://localhost:8082/remoteEntry.js',
-      },
-      exposes: {
-        '.': './src/bootstrap',
       },
       shared: {
         ...deps,

@@ -1,0 +1,6 @@
+{
+  "name": "contactapp",
+  "exposes": {
+    ".": "./src/bootstrap"
+  }
+}

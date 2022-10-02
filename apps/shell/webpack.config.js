@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
-const WebpackRemoteTypesPlugin = require('webpack-remote-types-plugin').default
+const federation = require('./federation.config.json')
 
 const deps = require('./package.json').dependencies
 module.exports = {
@@ -47,13 +47,13 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'shell',
+      ...federation,
       filename: 'remoteEntry.js',
       remotes: {
         contactapp: 'contactapp@http://localhost:8081/remoteEntry.js',
         store: 'store@http://localhost:8082/remoteEntry.js',
       },
-      exposes: {},
+
       shared: {
         ...deps,
         react: {
@@ -76,13 +76,6 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
-    }),
-    new WebpackRemoteTypesPlugin({
-      remotes: {
-        contactapp: 'contactapp@http://localhost:8081/',
-      },
-      outputDir: 'types', // supports [name] as the remote name
-      remoteFileName: '[name]-dts.tgz', // default filename is [name]-dts.tgz where [name] is the remote name, for example, `app` with the above setup
     }),
   ],
 }

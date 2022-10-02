@@ -10,7 +10,8 @@
   "scripts": {
     "build": "turbo run build",
     "start": "turbo run start",
-    "dev": "turbo run dev --parallel"
+    "dev": "turbo run dev --parallel",
+    "dev:types": "turbo run dev:types --parallel"
   },
   "dependencies": {},
   "devDependencies": {

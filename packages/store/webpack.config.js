@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const federation = require('./federation.config.json')
 
 const deps = require('./package.json').dependencies
 module.exports = {
@@ -30,12 +31,9 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'store',
+      ...federation,
       filename: 'remoteEntry.js',
       remotes: {},
-      exposes: {
-        '.': './src/index',
-      },
       shared: {
         ...deps,
         react: {

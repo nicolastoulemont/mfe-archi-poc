@@ -1,0 +1,6 @@
+{
+  "name": "store",
+  "exposes": {
+    ".": "./src/index"
+  }
+}
