@@ -1,8 +1,11 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const WebpackRemoteTypesPlugin = require('webpack-remote-types-plugin').default
 
 const deps = require('./package.json').dependencies
 module.exports = {
+  name: 'shell',
+  entry: './src/index',
   output: {
     publicPath: 'http://localhost:8080/',
   },
@@ -73,6 +76,13 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
+    }),
+    new WebpackRemoteTypesPlugin({
+      remotes: {
+        contactapp: 'contactapp@http://localhost:8081/',
+      },
+      outputDir: 'types', // supports [name] as the remote name
+      remoteFileName: '[name]-dts.tgz', // default filename is [name]-dts.tgz where [name] is the remote name, for example, `app` with the above setup
     }),
   ],
 }

@@ -11,3 +11,10 @@ dist
 
 # TypeScript cache
 *.tsbuildinfo
+
+# Turborepo
+.turbo
+
+# Module federal type generation
+.wp_federation
+apps/shell/types/contactapp-dts.tgz

@@ -6,7 +6,9 @@
     "build:dev": "webpack --mode development",
     "start": "cd dist && PORT=8080 npx serve",
     "dev": "webpack serve --open --mode development",
-    "dev:live": "webpack serve --open --mode development --live-reload --hot"
+    "dev2": "webpack serve",
+    "dev:live": "webpack serve --open --mode development --live-reload --hot",
+    "clean": "rm -rf dist"
   },
   "license": "MIT",
   "devDependencies": {
@@ -28,17 +30,18 @@
     "typescript": "4.8.3",
     "webpack": "5.74.0",
     "webpack-cli": "4.10.0",
-    "webpack-dev-server": "4.9.3"
+    "webpack-dev-server": "4.11.1",
+    "webpack-remote-types-plugin": "0.2.7"
   },
   "dependencies": {
+    "@mfe-archi-poc/query": "1.0.0",
+    "history": "5.3.0",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0",
-    "history": "5.3.0",
     "serve": "14.0.1",
-    "@mfe-archi-poc/query": "1.0.0",
-    "localforage": "^1.10.0",
-    "match-sorter": "^6.3.1",
     "sort-by": "^1.2.0"
   }
 }

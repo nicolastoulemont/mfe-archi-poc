@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const path = require('path')
 
 const deps = require('./package.json').dependencies
 module.exports = {
@@ -39,9 +40,23 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      // {
+      //   test: /\.tsx?$/,
+      //   exclude: /node_modules/,
+      //   use: [
+      //     {
+      //       loader: 'dts-loader',
+      //       options: {
+      //         name: 'contactapp', // The name configured in ModuleFederationPlugin
+      //         exposes: {
+      //           '.': './src/bootstrap',
+      //         },
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
-
   plugins: [
     new ModuleFederationPlugin({
       name: 'contactapp',
