@@ -1,5 +1,3 @@
-import { destroyRoute } from './routes/destroy-contract'
-import { contactRoute } from './routes/contact'
-import { editRoute } from './routes/edit-contact'
-
-export default [contactRoute, editRoute, destroyRoute]
+export { destroyRoute } from './routes/destroy-contract'
+export { contactRoute } from './routes/contact'
+export { editRoute } from './routes/edit-contact'

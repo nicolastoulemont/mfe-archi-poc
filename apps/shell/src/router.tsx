@@ -1,18 +1,29 @@
-import { createBrowserRouter } from 'react-router-dom'
-
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
 import Root, { loader as rootLoader, action as rootAction } from './routes/root'
 import Index from './routes/index'
 import ErrorPage from './error-page'
 import { queryClient } from '@mfe-archi-poc/query'
-import contactRoutes from 'contactapp'
+import { contactRoute, editRoute, destroyRoute } from 'contactapp'
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    loader: rootLoader(queryClient),
-    action: rootAction(queryClient),
-    children: [{ index: true, element: <Index /> }, ...contactRoutes],
-  },
-])
+export const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route
+      path='/'
+      loader={rootLoader(queryClient)}
+      action={rootAction(queryClient)}
+      element={<Root />}
+      errorElement={<ErrorPage />}
+    >
+      <Route index element={<Index />} />
+      <Route
+        path={contactRoute.path}
+        loader={contactRoute.loader}
+        action={contactRoute.action}
+        element={contactRoute.element}
+        errorElement={contactRoute.errorElement}
+      />
+      <Route path={editRoute.path} loader={editRoute.loader} action={editRoute.action} element={editRoute.element} />
+      <Route path={destroyRoute.path} action={destroyRoute.action} />
+    </Route>
+  )
+)
