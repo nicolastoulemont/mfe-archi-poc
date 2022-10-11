@@ -2,6 +2,7 @@ import { PrismaClient, Role } from '@prisma/client'
 import type { Account } from '@prisma/client'
 import fastify from 'fastify'
 import cors from '@fastify/cors'
+import { PORTS_MAP } from '@mfe-archi-poc/ports-map'
 
 const prisma = new PrismaClient()
 
@@ -109,14 +110,12 @@ async function main() {
     res.send(account)
   })
 
-  const port = 3002
-
-  await app.listen({ port }, (err) => {
+  await app.listen({ port: PORTS_MAP.AUTH.DEV_API }, (err) => {
     if (err) {
       console.error(err)
       process.exit(1)
     }
-    console.log(`🚀 Auth server ready at: http://localhost:${port}`)
+    console.log(`🚀 Auth server ready at: http://localhost:${PORTS_MAP.AUTH.DEV_API}`)
   })
 }
 

@@ -1,0 +1,19 @@
+{
+  "name": "@mfe-archi-poc/ports-map",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf ./build",
+    "build": "yarn clean && tsc -b",
+    "dev": "tsc -w"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "4.8.3"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.3.4",
+    "react": "18.2.0"
+  }
+}
