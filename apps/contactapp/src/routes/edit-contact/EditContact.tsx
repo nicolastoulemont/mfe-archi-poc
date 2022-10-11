@@ -2,8 +2,8 @@ import { Form, redirect, useNavigate, useParams } from 'react-router-dom'
 import type { LoaderFunctionArgs, ActionFunctionArgs } from 'react-router-dom'
 import { updateContact } from './EditContact.http'
 import type { IContact } from '../contact'
-import type { QueryClientType } from '@mfe-archi-poc/query'
-import { useQuery } from '@mfe-archi-poc/query'
+import type { QueryClientType } from "@poc/query'
+import { useQuery } from "@poc/query'
 import { contactDetailQuery } from '../contact'
 
 export const loader =

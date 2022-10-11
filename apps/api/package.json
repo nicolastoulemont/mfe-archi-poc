@@ -1,5 +1,5 @@
 {
-  "name": "@mfe-archi-poc/api",
+  "name": "@poc/api",
   "version": "1.0.0",
   "license": "MIT",
   "main": "build/index.js",

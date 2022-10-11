@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
-const { PORTS_MAP } = require('@mfe-archi-poc/ports-map')
+const { PORTS_MAP } = require('@poc/ports-map')
 
 const deps = require('./package.json').dependencies
 module.exports = {
@@ -67,9 +67,9 @@ module.exports = {
           singleton: true,
           requiredVersion: deps['react-router-dom'],
         },
-        '@mfe-archi-poc/query': {
+        '@poc/query': {
           singleton: true,
-          requiredVersion: deps['@mfe-archi-poc/query'],
+          requiredVersion: deps['@poc/query'],
         },
       },
     }),

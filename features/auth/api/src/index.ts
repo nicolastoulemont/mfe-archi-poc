@@ -2,7 +2,7 @@ import { PrismaClient, Role } from '@prisma/client'
 import type { Account } from '@prisma/client'
 import fastify from 'fastify'
 import cors from '@fastify/cors'
-import { PORTS_MAP } from '@mfe-archi-poc/ports-map'
+import { PORTS_MAP } from '@poc/ports-map'
 
 const prisma = new PrismaClient()
 

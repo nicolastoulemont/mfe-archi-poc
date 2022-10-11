@@ -1,5 +1,5 @@
 {
-  "name": "@mfe-archi-poc/auth-front",
+  "name": "@poc/auth-front",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
@@ -44,11 +44,11 @@
     "webpack": "5.74.0",
     "webpack-cli": "4.10.0",
     "webpack-dev-server": "4.9.3",
-    "@mfe-archi-poc/auth-mocks": "*",
-    "@mfe-archi-poc/ports-map": "*"
+    "@poc/auth-mocks": "*",
+    "@poc/ports-map": "*"
   },
   "dependencies": {
-    "@mfe-archi-poc/query": "1.0.0",
+    "@poc/query": "1.0.0",
     "history": "5.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

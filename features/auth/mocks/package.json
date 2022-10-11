@@ -1,5 +1,5 @@
 {
-  "name": "@mfe-archi-poc/auth-mocks",
+  "name": "@poc/auth-mocks",
   "version": "1.0.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",

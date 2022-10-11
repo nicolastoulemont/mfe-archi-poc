@@ -2,7 +2,7 @@ import { Form, ActionFunctionArgs, redirect } from 'react-router-dom'
 
 import { signUp } from './SignUp.http'
 
-import type { QueryClientType } from '@mfe-archi-poc/query'
+import type { QueryClientType } from "@poc/query'
 
 import { IAccountByIdBody } from '../../../../api/src'
 

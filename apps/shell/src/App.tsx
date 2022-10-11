@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-import { queryClient, QueryClientProvider } from '@mfe-archi-poc/query'
+import { queryClient, QueryClientProvider } from "@poc/query'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './router'
 

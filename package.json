@@ -1,5 +1,6 @@
 {
-  "name": "mfe-archi-poc",
+  "name": "poc",
+  "description": "PoC for federated frontend, mock based development, distributed backends, etc.",
   "private": true,
   "license": "MIT",
   "workspaces": [

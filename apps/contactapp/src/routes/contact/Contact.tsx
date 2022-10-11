@@ -2,8 +2,8 @@ import { Form, useFetcher, ActionFunctionArgs, useParams } from 'react-router-do
 import type { LoaderFunctionArgs } from 'react-router-dom'
 import { updateContact } from '../edit-contact/EditContact.http'
 
-import type { QueryClientType } from '@mfe-archi-poc/query'
-import { useQuery } from '@mfe-archi-poc/query'
+import type { QueryClientType } from "@poc/query'
+import { useQuery } from "@poc/query'
 import { IContact } from './Contact.types'
 import { contactDetailQuery } from './Contact.http'
 import { useStore } from 'store'

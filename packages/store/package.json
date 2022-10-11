@@ -1,5 +1,5 @@
 {
-  "name": "@mfe-archi-poc/store",
+  "name": "@poc/store",
   "version": "1.0.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",

@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Contact, action, loader } from './Contact'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
-import { queryClient } from '@mfe-archi-poc/query'
+import { queryClient } from "@poc/query'
 import { rest } from 'msw'
 import ErrorPage from '../../error-page'
 

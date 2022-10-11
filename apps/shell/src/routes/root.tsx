@@ -7,8 +7,8 @@ import { LoaderType } from '../types'
 
 import { useStore } from 'store'
 
-import type { QueryClientType } from '@mfe-archi-poc/query'
-import { useQuery } from '@mfe-archi-poc/query'
+import type { QueryClientType } from "@poc/query'
+import { useQuery } from "@poc/query'
 
 const contactListQuery = (q: string | null) => ({
   queryKey: ['contacts', 'list', q],

@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { SignIn, action } from './SignIn'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
-import { queryClient } from '@mfe-archi-poc/query'
+import { queryClient } from "@poc/query'
 
-import { authMocks } from '@mfe-archi-poc/auth-mocks'
+import { authMocks } from "@poc/auth-mocks'
 import ErrorPage from '../../error-page'
 
 export default {

@@ -1,5 +1,5 @@
 import { SignIn, action } from './SignIn'
-import { queryClient } from '@mfe-archi-poc/query'
+import { queryClient } from "@poc/query'
 
 export const signInRoute = {
   path: 'signin',
