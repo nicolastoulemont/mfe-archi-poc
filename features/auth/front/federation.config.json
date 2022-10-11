@@ -1,0 +1,6 @@
+{
+  "name": "auth-front",
+  "exposes": {
+    ".": "./src/bootstrap"
+  }
+}

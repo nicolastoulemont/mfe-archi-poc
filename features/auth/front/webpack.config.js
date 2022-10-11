@@ -44,7 +44,7 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'contactapp',
+      name: 'auth-front',
       filename: 'remoteEntry.js',
       remotes: {
         store: 'store@http://localhost:8082/remoteEntry.js',

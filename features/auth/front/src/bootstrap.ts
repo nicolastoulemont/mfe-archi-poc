@@ -1,4 +1,2 @@
-import { contactRoute } from './routes/signup'
-import { editRoute } from './routes/signin'
-
-export default [contactRoute, editRoute]
+export { signUpRoute } from './routes/signup'
+export { signInRoute } from './routes/signin'

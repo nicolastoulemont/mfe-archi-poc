@@ -1,3 +1,2 @@
-export * from './Contact.route'
-export * from './Contact.http'
-export * from './Contact.types'
+export * from './SignUp.route'
+export * from './SignUp.http'

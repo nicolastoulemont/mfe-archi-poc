@@ -1,12 +1,17 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, Role } from '@prisma/client'
 import type { Account } from '@prisma/client'
 import fastify from 'fastify'
 import cors from '@fastify/cors'
 
 const prisma = new PrismaClient()
 
-type IAccountByIdParam = Pick<Account, 'id'>
-type IAccountByIdBody = Omit<Account, 'id'>
+export type AccountEntity = Account
+export type AccountWithRole = Account & {
+  roles: Role[]
+}
+
+export type IAccountByIdParam = Pick<Account, 'id'>
+export type IAccountByIdBody = Omit<Account, 'id'>
 
 async function main() {
   const app = fastify()
@@ -18,7 +23,12 @@ async function main() {
     Body: string
   }>(`/signin`, async (req, res) => {
     const { email, password } = JSON.parse(req.body) as IAccountByIdBody
-    const account = await prisma.account.findUnique({ where: { email } })
+    const account = await prisma.account.findUnique({
+      where: { email },
+      include: {
+        roles: true,
+      },
+    })
     if (!account) {
       res.status(401).send({ message: 'Invalid email or password' })
     }
@@ -34,10 +44,23 @@ async function main() {
   app.post<{
     Body: string
   }>(`/signup`, async (req, res) => {
-    const { email, password } = JSON.parse(req.body) as IAccountByIdBody
+    const { email, password, role } = JSON.parse(req.body) as IAccountByIdBody & { role: string }
     try {
-      const result = await prisma.account.create({ data: { email, password } })
-      res.send(result)
+      const account = await prisma.account.create({
+        data: {
+          email,
+          password,
+          roles: {
+            create: {
+              type: role,
+            },
+          },
+        },
+        include: {
+          roles: true,
+        },
+      })
+      res.send(account)
     } catch (error) {
       console.error(error)
       res.status(401).send({ message: 'Invalid email or password' })
@@ -50,44 +73,43 @@ async function main() {
   }>(`/account/:id`, async (req, res) => {
     const { id } = req.params
     const { email, password } = JSON.parse(req.body) as IAccountByIdBody
-    const result = await prisma.account.update({
+    const account = await prisma.account.update({
       where: { id },
       data: {
         email,
         password,
       },
     })
-    res.send(result)
+    res.send(account)
   })
 
   app.delete<{
     Params: IAccountByIdParam
-  }>(`/contact/:id`, async (req, res) => {
+  }>(`/account/:id`, async (req, res) => {
     const { id } = req.params
-    const contact = await prisma.account.delete({
+    const account = await prisma.account.delete({
       where: {
         id,
       },
     })
-    res.send(contact)
+    res.send(account)
   })
 
   app.get<{
     Params: IAccountByIdParam
-  }>('/contact/:id', async (req, res) => {
+  }>('/account/:id', async (req, res) => {
     const { id } = req.params
 
-    const contact = await prisma.account.findUnique({
+    const account = await prisma.account.findUnique({
       where: { id },
       include: {
         roles: true,
       },
     })
-
-    res.send(contact)
+    res.send(account)
   })
 
-  const port = 3001
+  const port = 3002
 
   await app.listen({ port }, (err) => {
     if (err) {
