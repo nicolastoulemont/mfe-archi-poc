@@ -8,8 +8,8 @@
     "build:dev": "webpack --mode development",
     "start": "cd dist && PORT=8081 npx serve",
     "dev": "concurrently \"yarn dev:types\" \"yarn dev:start\"",
-    "dev:start": "webpack serve --open --mode development",
-    "dev:live": "webpack serve --open --mode development --live-reload --hot",
+    "dev:start": "webpack serve --mode development",
+    "dev:live": "webpack serve --mode development --live-reload --hot",
     "dev:types": "watch 'make-federated-types' ./src"
   },
   "license": "MIT",

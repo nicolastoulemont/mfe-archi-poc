@@ -1,3 +1,4 @@
+import { PORTS_MAP } from '@poc/ports-map'
 import { matchSorter } from 'match-sorter'
 import sortBy from 'sort-by'
 
@@ -12,7 +13,7 @@ export interface Contact {
   favorite: boolean
 }
 
-const API_URL = 'http://localhost:3000'
+export const API_URL = `http://localhost:${PORTS_MAP.CONTACT.DEV_API}`
 
 export async function getContacts(query?: any) {
   const res = await fetch(`${API_URL}/contacts${query ? `?search=${query}` : ''}`)

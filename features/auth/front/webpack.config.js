@@ -4,6 +4,7 @@ const { PORTS_MAP } = require('@poc/ports-map')
 
 const deps = require('./package.json').dependencies
 module.exports = {
+  name: 'auth-front',
   output: {
     publicPath: `http://localhost:${PORTS_MAP.AUTH.DEV_WEB_SERVER}/`,
   },

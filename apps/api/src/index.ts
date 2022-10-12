@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client'
 import type { Contact } from '@prisma/client'
 import fastify from 'fastify'
 import cors from '@fastify/cors'
-
+import { PORTS_MAP } from '@poc/ports-map'
 const prisma = new PrismaClient()
 
 type IContactByIdParam = Pick<Contact, 'id'>
@@ -78,14 +78,14 @@ async function main() {
 
   await app.listen(
     {
-      port: 3000,
+      port: PORTS_MAP.CONTACT.DEV_API,
     },
     (err) => {
       if (err) {
         console.error(err)
         process.exit(1)
       }
-      console.log(`🚀 Server ready at: http://localhost:3000`)
+      console.log(`🚀 Server ready at: http://localhost:${PORTS_MAP.CONTACT.DEV_API}`)
     }
   )
 }

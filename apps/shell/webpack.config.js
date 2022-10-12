@@ -1,13 +1,14 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const federation = require('./federation.config.json')
+const { PORTS_MAP } = require('@poc/ports-map')
 
 const deps = require('./package.json').dependencies
 module.exports = {
   name: 'shell',
   entry: './src/index',
   output: {
-    publicPath: 'http://localhost:8080/',
+    publicPath: `http://localhost:${PORTS_MAP.SHELL.DEV_WEB_SERVER}/`,
   },
 
   resolve: {
@@ -15,7 +16,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 8080,
+    port: PORTS_MAP.SHELL.DEV_WEB_SERVER,
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
@@ -50,8 +51,8 @@ module.exports = {
       ...federation,
       filename: 'remoteEntry.js',
       remotes: {
-        contactapp: 'contactapp@http://localhost:8081/remoteEntry.js',
-        store: 'store@http://localhost:8082/remoteEntry.js',
+        contactapp: `contactapp@http://localhost:${PORTS_MAP.CONTACT.DEV_WEB_SERVER}/remoteEntry.js`,
+        store: `store@http://localhost:${PORTS_MAP.STORE.DEV_WEB_SERVER}/remoteEntry.js`,
       },
 
       shared: {
