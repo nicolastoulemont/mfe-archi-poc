@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { SignUp, action } from './SignUp'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
-import { queryClient } from "@poc/query'
-import { rest } from 'msw'
+import { queryClient } from '@poc/query'
 import ErrorPage from '../../error-page'
+import { authMocks } from '@poc/auth-mocks'
 
 export default {
   title: 'Auth/SignUp',
@@ -36,19 +36,6 @@ export const Default = Template.bind({})
 
 Default.parameters = {
   msw: {
-    handlers: [
-      rest.get('http://localhost:3002/account/1', (req, res, ctx) => {
-        return res(
-          ctx.json({
-            first: 'Nicolas',
-            last: 'Toulemont',
-            avatar: 'https://avatars.githubusercontent.com/u/40027895?v=4',
-            twitter: '@NicoToulemont',
-            notes: 'Full stack engineer',
-            favorite: false,
-          })
-        )
-      }),
-    ],
+    handlers: [authMocks.getAccountSuccess],
   },
 }
