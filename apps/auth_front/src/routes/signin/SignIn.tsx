@@ -2,7 +2,14 @@ import { Form, Link, redirect, useActionData } from 'react-router-dom'
 import type { ActionFunctionArgs } from 'react-router-dom'
 import { signIn } from './SignIn.http'
 import type { QueryClientType } from '@poc/query'
-import { AccountWithRole, IAccountByIdBody } from '../../../../api/src'
+import {} from '@poc/auth_database'
+import type { Account, Role } from '@poc/auth_database'
+
+type AccountWithRole = Account & {
+  roles: Role[]
+}
+
+export type IAccountByIdBody = Omit<Account, 'id'>
 
 export const action =
   (queryClient: QueryClientType) =>

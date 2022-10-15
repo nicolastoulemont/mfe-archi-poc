@@ -4,7 +4,9 @@ import { signUp } from './SignUp.http'
 
 import type { QueryClientType } from '@poc/query'
 
-import { IAccountByIdBody } from '../../../../api/src'
+import type { Account } from '@poc/auth_database'
+
+type IAccountByIdBody = Omit<Account, 'id'>
 
 export const action =
   (queryClient: QueryClientType) =>

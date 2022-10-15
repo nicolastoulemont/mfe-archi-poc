@@ -1,5 +1,12 @@
-import { AccountWithRole, IAccountByIdBody } from '../../../../api/src/index'
+import type { Account, Role } from '@poc/auth_database'
+
 import { API_URL } from '../../constant'
+
+export type IAccountByIdBody = Omit<Account, 'id'>
+
+type AccountWithRole = Account & {
+  roles: Role[]
+}
 
 export const accountQuery = (id: string) => ({
   queryKey: ['account', id],

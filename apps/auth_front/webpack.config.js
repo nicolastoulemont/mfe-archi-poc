@@ -5,7 +5,8 @@ const federation = require('./federation.config.json')
 
 const deps = require('./package.json').dependencies
 module.exports = {
-  name: 'auth-front',
+  name: 'auth_front',
+  entry: './src/index',
   output: {
     publicPath: `http://localhost:${PORTS_MAP.AUTH.DEV_WEB_SERVER}/`,
   },

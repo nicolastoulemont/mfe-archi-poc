@@ -5,6 +5,7 @@ const { PORTS_MAP } = require('@poc/ports-map')
 
 const deps = require('./package.json').dependencies
 module.exports = {
+  name: 'contactapp',
   output: {
     publicPath: `http://localhost:${PORTS_MAP.CONTACT.DEV_WEB_SERVER}/`,
   },

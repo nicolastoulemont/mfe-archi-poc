@@ -5,7 +5,6 @@ const { PORTS_MAP } = require('@poc/ports-map')
 const deps = require('./package.json').dependencies
 module.exports = {
   name: 'shell',
-  entry: './src/index',
   output: {
     publicPath: `http://localhost:${PORTS_MAP.SHELL.DEV_WEB_SERVER}/`,
   },
@@ -51,6 +50,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         contactapp: `contactapp@http://localhost:${PORTS_MAP.CONTACT.DEV_WEB_SERVER}/remoteEntry.js`,
+        auth_front: `auth_front@http://localhost:${PORTS_MAP.AUTH.DEV_WEB_SERVER}/remoteEntry.js`,
         store: `store@http://localhost:${PORTS_MAP.STORE.DEV_WEB_SERVER}/remoteEntry.js`,
       },
 
