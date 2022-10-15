@@ -1,5 +1,5 @@
 {
-  "name": "auth-front",
+  "name": "auth_front",
   "exposes": {
     ".": "./src/bootstrap"
   }

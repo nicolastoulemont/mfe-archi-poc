@@ -1,5 +1,5 @@
-import { PrismaClient, Role } from '@poc/auth-database'
-import type { Account } from '@poc/auth-database'
+import { PrismaClient, Role } from '@poc/auth_database'
+import type { Account } from '@poc/auth_database'
 import fastify from 'fastify'
 import cors from '@fastify/cors'
 import { PORTS_MAP } from '@poc/ports-map'

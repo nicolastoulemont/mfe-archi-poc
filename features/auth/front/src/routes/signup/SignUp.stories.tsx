@@ -3,7 +3,7 @@ import { SignUp, action } from './SignUp'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
 import { queryClient } from '@poc/query'
 import ErrorPage from '../../error-page'
-import { authMocks } from '@poc/auth-mocks'
+import { authMocks } from '@poc/auth_mocks'
 
 export default {
   title: 'Auth/SignUp',

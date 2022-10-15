@@ -1,4 +1,4 @@
-import { Account, Role } from '@poc/auth-database'
+import { Account, Role } from '@poc/auth_database'
 import { DefaultBodyType, MockedRequest, RestHandler, rest } from 'msw'
 
 type AuthMocksKeys =
