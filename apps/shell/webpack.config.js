@@ -1,6 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
-const federation = require('./federation.config.json')
 const { PORTS_MAP } = require('@poc/ports-map')
 
 const deps = require('./package.json').dependencies
@@ -48,7 +47,7 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      ...federation,
+      name: 'shell',
       filename: 'remoteEntry.js',
       remotes: {
         contactapp: `contactapp@http://localhost:${PORTS_MAP.CONTACT.DEV_WEB_SERVER}/remoteEntry.js`,
