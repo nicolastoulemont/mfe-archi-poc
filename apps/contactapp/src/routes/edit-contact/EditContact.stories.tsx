@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { EditContact, action, loader } from './EditContact'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
-import { queryClient } from "@poc/query'
+import { queryClient } from '@poc/query'
 import { rest } from 'msw'
 import ErrorPage from '../../error-page'
 

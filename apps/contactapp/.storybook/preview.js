@@ -1,4 +1,4 @@
-import { queryClient, QueryClientProvider } from "@poc/query'
+import { queryClient, QueryClientProvider } from '@poc/query'
 import { initialize, mswDecorator } from 'msw-storybook-addon'
 
 export const parameters = {

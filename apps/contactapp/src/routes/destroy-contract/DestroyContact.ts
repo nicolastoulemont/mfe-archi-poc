@@ -1,4 +1,4 @@
-import type { QueryClientType } from "@poc/query'
+import type { QueryClientType } from '@poc/query'
 import { ActionFunctionArgs, redirect } from 'react-router-dom'
 import { deleteContact } from './DestroyContact.http'
 

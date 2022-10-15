@@ -1,4 +1,4 @@
-import { queryClient } from "@poc/query'
+import { queryClient } from '@poc/query'
 import { action } from './DestroyContact'
 
 export const destroyRoute = {

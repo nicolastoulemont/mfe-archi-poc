@@ -1,7 +1,7 @@
 import { Form, Link, redirect, useActionData } from 'react-router-dom'
 import type { ActionFunctionArgs } from 'react-router-dom'
 import { signIn } from './SignIn.http'
-import type { QueryClientType } from "@poc/query'
+import type { QueryClientType } from '@poc/query'
 import { AccountWithRole, IAccountByIdBody } from '../../../../api/src'
 
 export const action =
