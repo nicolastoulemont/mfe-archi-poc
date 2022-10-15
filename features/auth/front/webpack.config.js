@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const { PORTS_MAP } = require('@poc/ports-map')
+const federation = require('./federation.config.json')
 
 const deps = require('./package.json').dependencies
 module.exports = {
@@ -46,10 +47,10 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'auth-front',
+      ...federation,
       filename: 'remoteEntry.js',
       remotes: {
-        store: 'store@http://localhost:8082/remoteEntry.js',
+        store: `store@http://localhost:${PORTS_MAP.STORE.DEV_WEB_SERVER}/remoteEntry.js`,
       },
       exposes: {
         '.': './src/bootstrap',

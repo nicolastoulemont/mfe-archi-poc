@@ -1,17 +1,17 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const federation = require('./federation.config.json')
-
+const { PORTS_MAP } = require('@poc/ports-map')
 const deps = require('./package.json').dependencies
 module.exports = {
   output: {
-    publicPath: 'http://localhost:8082/',
+    publicPath: `http://localhost:${PORTS_MAP.STORE.DEV_WEB_SERVER}/`,
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
   },
   devServer: {
-    port: 8082,
+    port: PORTS_MAP.STORE.DEV_WEB_SERVER,
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
