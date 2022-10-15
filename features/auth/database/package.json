@@ -13,7 +13,7 @@
     ]
   },
   "scripts": {
-    "build": "rimraf ./build && tsc -b",
+    "build": "rimraf ./build tsconfig.tsbuildinfo  && tsc",
     "dev": "nodemon",
     "push": "yarn prisma db push",
     "gen": "yarn prisma generate",
