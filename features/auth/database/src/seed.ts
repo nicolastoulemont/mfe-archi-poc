@@ -20,7 +20,7 @@ const accounts: Prisma.AccountCreateInput[] = [
   },
 ]
 
-async function main() {
+async function seed() {
   console.log(`Start seeding ...`)
   for (const account of accounts) {
     const acc = await prisma.account.create({
@@ -31,7 +31,7 @@ async function main() {
   console.log(`Seeding finished.`)
 }
 
-main()
+seed()
   .then(async () => {
     await prisma.$disconnect()
   })

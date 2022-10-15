@@ -12,9 +12,8 @@
     "outDir": "build",
     "rootDir": "src",
     "isolatedModules": true,
-    "esModuleInterop": true,
-    "baseUrl": "."
+    "esModuleInterop": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "build"]
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "src/seed.ts"]
 }
