@@ -1,0 +1,6 @@
+{
+  "name": "contact_front",
+  "exposes": {
+    ".": "./src/bootstrap"
+  }
+}

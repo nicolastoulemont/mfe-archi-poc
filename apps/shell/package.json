@@ -1,14 +1,12 @@
 {
-  "name": "shell",
+  "name": "@poc/shell_front",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "start": "cd dist && PORT=8080 npx serve",
-    "dev": "concurrently \"yarn dev:types\" \"yarn dev:start\"",
-    "dev:start": "webpack serve --open --mode development",
+    "dev": "webpack serve --open --mode development",
     "dev:live": "webpack serve --open --mode development --live-reload --hot",
-    "dev:types": "make-federated-types",
     "clean": "rm -rf dist"
   },
   "license": "MIT",
@@ -39,12 +37,9 @@
   "dependencies": {
     "@poc/query": "1.0.0",
     "history": "5.3.0",
-    "localforage": "^1.10.0",
-    "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0",
-    "serve": "14.0.1",
-    "sort-by": "^1.2.0"
+    "serve": "14.0.1"
   }
 }

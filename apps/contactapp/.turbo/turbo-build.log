@@ -1,5 +1,0 @@
-[34mapp1:build[0m: cache hit, replaying output [2m1b7634341628ebc2[0m
-[34mapp1:build: [0m
-[34mapp1:build: [0m> app1@1.0.0 build /Users/nicolastoulemont/Code/mfe-archi-poc/apps/app1
-[34mapp1:build: [0m> webpack --mode production
-[34mapp1:build: [0m

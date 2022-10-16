@@ -1,10 +1,8 @@
-import { PrismaClient, Role } from '@poc/auth_database'
-import type { Account } from '@poc/auth_database'
+import { prisma } from '@poc/auth_database'
+import type { Account, Role } from '@poc/auth_database'
 import fastify from 'fastify'
 import cors from '@fastify/cors'
 import { PORTS_MAP } from '@poc/ports-map'
-
-const prisma = new PrismaClient()
 
 export type AccountEntity = Account
 export type AccountWithRole = Account & {

@@ -12,6 +12,9 @@
     },
     "dev": {
       "cache": false
+    },
+    "dev:types": {
+      "cache": false
     }
   }
 }

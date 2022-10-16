@@ -1,0 +1,2 @@
+- [] Find the error source of the db packages error "Cannot write file '/Users/nicolastoulemont/Code/mfe-archi-poc/packages/auth_database/build/index.d.ts' because it would overwrite input file.ts"
+- [ensure contact route storybooks work (check paths issues)]
