@@ -85,7 +85,7 @@ export function Contacts() {
               {contacts.map((contact) => (
                 <li key={contact.id}>
                   <NavLink
-                    to={`contacts/${contact.id}`}
+                    to={String(contact.id)}
                     className={({ isActive, isPending }) => (isActive ? 'active' : isPending ? 'pending' : '')}
                   >
                     {contact.first || contact.last ? (
