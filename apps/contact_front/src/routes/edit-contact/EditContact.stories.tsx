@@ -38,7 +38,7 @@ export const Default = Template.bind({})
 Default.parameters = {
   msw: {
     handlers: [
-      rest.get('http://localhost:3000/contact/1', (req, res, ctx) => {
+      rest.get('http://localhost:3000/contacts/1', (req, res, ctx) => {
         return res(
           ctx.json({
             first: 'Nicolas',

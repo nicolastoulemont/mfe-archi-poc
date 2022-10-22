@@ -8,7 +8,7 @@ export const contactDetailQuery = (id: string) => ({
 })
 
 export async function getContact(id: string): Promise<IContact> {
-  const res = await fetch(`${API_URL}/contact/${id}`)
+  const res = await fetch(`${API_URL}/contacts/${id}`)
   const contact: IContact = await res.json()
   return contact
 }

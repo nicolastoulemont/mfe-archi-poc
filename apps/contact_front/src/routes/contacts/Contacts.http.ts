@@ -18,7 +18,7 @@ export async function getContacts(query?: any) {
 }
 
 export async function createContact() {
-  const res = await fetch(`${API_URL}/contact`, { method: 'post' })
+  const res = await fetch(`${API_URL}/contacts`, { method: 'post' })
   const contact: Pick<IContact, 'id' | 'createdAt'> = await res.json()
   return contact
 }

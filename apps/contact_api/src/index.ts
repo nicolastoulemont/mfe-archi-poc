@@ -1,6 +1,6 @@
 import { prisma } from '@poc/contact_database'
 import type { Contact } from '@poc/contact_database'
-import fastify from 'fastify'
+import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import { PORTS_MAP } from '@poc/ports-map'
 
@@ -9,14 +9,14 @@ type IContactByNameQuery = { search: string | null }
 type IContactByIdBody = Omit<Contact, 'id'>
 
 async function main() {
-  const app = fastify()
+  const app = Fastify({ logger: true })
   await app.register(cors, {
     origin: '*',
   })
 
   app.post<{
     Body: {}
-  }>(`/contact`, async (req, res) => {
+  }>(`/contacts`, async (req, res) => {
     const result = await prisma.contact.create({ data: {} })
     res.send(result)
   })
@@ -24,7 +24,7 @@ async function main() {
   app.put<{
     Params: IContactByIdParam
     Body: string
-  }>(`/contact/:id`, async (req, res) => {
+  }>(`/contacts/:id`, async (req, res) => {
     const { id } = req.params
     const { first, last, avatar, twitter, favorite, notes } = JSON.parse(req.body) as IContactByIdBody
     const result = await prisma.contact.update({
@@ -43,7 +43,7 @@ async function main() {
 
   app.delete<{
     Params: IContactByIdParam
-  }>(`/contact/:id`, async (req, res) => {
+  }>(`/contacts/:id`, async (req, res) => {
     const { id } = req.params
     const contact = await prisma.contact.delete({
       where: {
@@ -66,7 +66,7 @@ async function main() {
 
   app.get<{
     Params: IContactByIdParam
-  }>('/contact/:id', async (req, res) => {
+  }>('/contacts/:id', async (req, res) => {
     const { id } = req.params
 
     const contact = await prisma.contact.findUnique({
