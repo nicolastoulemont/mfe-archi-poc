@@ -3,7 +3,7 @@ import { SignIn, action } from './SignIn'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
 import { queryClient } from '@poc/query'
 
-import { authMocks } from '@poc/auth_mocks'
+import { authMocks } from '../../../../auth_mocks/build'
 import ErrorPage from '../../error-page'
 
 export default {
