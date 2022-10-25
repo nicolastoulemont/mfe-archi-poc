@@ -21,8 +21,8 @@
     "seed": "npx ts-node src/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "4.3.1",
-    "prisma": "4.3.1"
+    "@prisma/client": "4.5.0",
+    "prisma": "4.5.0"
   },
   "devDependencies": {
     "@types/node": "18.7.18",

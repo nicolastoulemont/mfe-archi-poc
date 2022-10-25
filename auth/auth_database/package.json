@@ -21,12 +21,13 @@
     "seed": "npx ts-node src/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "4.3.1",
-    "prisma": "4.3.1"
+    "@prisma/client": "4.5.0",
+    "prisma": "4.5.0"
   },
   "devDependencies": {
     "@types/node": "18.7.18",
     "ts-node": "^10.9.1",
-    "typescript": "4.8.3"
+    "typescript": "4.8.3",
+    "zod-prisma": "0.5.4"
   }
 }

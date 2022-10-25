@@ -1,24 +1,31 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+generator zod {
+  provider     = "zod-prisma"
+  output       = "../../auth_api/src/generated_schemas" // (default) the directory where generated zod schemas will be saved
+  // useDecimalJs          = false // (default) represent the prisma Decimal type using as a JS number
+  useDecimalJs = true // represent the prisma Decimal type using Decimal.js (as Prisma does)
 }
 
 model Account {
-  id       String @id @default(cuid())
-  email    String @unique
+  id       String @id @default(cuid()) /// @zod.uuid()
+  email    String @unique /// @zod.email()
   password String
   roles    Role[]
 }
 
 model Role {
-  id        String   @id @default(cuid())
+  id        String   @id @default(cuid()) /// @zod.uuid()
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  accountId String
+  accountId String /// @zod.uuid()
   account   Account  @relation(fields: [accountId], references: [id], onDelete: Cascade)
   // Using a simple string here since the sqlite db used for prototyping here doesn't support enums
   // the Role type will be either employee or admin
