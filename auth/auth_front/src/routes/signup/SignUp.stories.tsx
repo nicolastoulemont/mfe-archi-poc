@@ -3,7 +3,7 @@ import { SignUp, action } from './SignUp'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
 import { queryClient } from '@poc/query'
 import ErrorPage from '../../error-page'
-import { authMocks } from '../../../../auth_mocks/build'
+// import { authMocks } from '../../../../auth_mocks/build'
 
 export default {
   title: 'Auth/SignUp',
@@ -34,8 +34,8 @@ const Template: ComponentStory<typeof SignUp> = (args: any) => <SignUp {...args}
 
 export const Default = Template.bind({})
 
-Default.parameters = {
-  msw: {
-    handlers: [authMocks.getAccountSuccess],
-  },
-}
+// Default.parameters = {
+//   msw: {
+//     handlers: [authMocks.getAccountSuccess],
+//   },
+// }

@@ -7,16 +7,11 @@
   "scripts": {
     "build": "tsc -b",
     "dev": "tsnd --exit-child src/index.ts",
-    "test": "tap --node-arg=--require=ts-node/register",
-    "seed:mocks": "ts-node ./src/scripts/seed.mocks.ts"
+    "test": "tap --node-arg=--require=ts-node/register"
   },
   "dependencies": {
-    "@anatine/zod-mock": "3.6.0",
-    "@faker-js/faker": "7.6.0",
     "@fastify/cors": "^8.1.0",
     "@fastify/jwt": "6.3.2",
-    "@fastify/swagger": "8.0.0",
-    "@fastify/swagger-ui": "1.1.0",
     "@poc/auth_database": "*",
     "dotenv": "16.0.3",
     "fastify": "4.6.0",
@@ -27,10 +22,11 @@
     "zod-to-json-schema": "3.18.1"
   },
   "devDependencies": {
+    "@fastify/swagger": "8.0.0",
+    "@fastify/swagger-ui": "1.1.0",
     "@poc/ports-map": "*",
     "@types/node": "18.11.3",
     "@types/tap": "15.0.7",
-    "@faker-js/faker": "7.6.0",
     "sinon": "13.0.1",
     "ts-node": "10.9.1",
     "ts-node-dev": "2.0.0",

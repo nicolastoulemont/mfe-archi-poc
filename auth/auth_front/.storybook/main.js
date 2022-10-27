@@ -10,4 +10,7 @@ module.exports = {
   core: {
     builder: '@storybook/builder-webpack5',
   },
+  // webpackFinal: async (config) => {
+  //   return { ...config, resolve: { fallback: { timers: require.resolve('timers-browserify') } } }
+  // },
 }

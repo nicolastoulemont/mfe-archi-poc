@@ -1,4 +1,5 @@
 import { FastifyInstance } from 'fastify'
+import { $ref } from './account.schema'
 import {
   signInHandler,
   signUpHandler,
@@ -6,22 +7,73 @@ import {
   getAccountByIdHandler,
   deleteAccountByIdHandler,
 } from './account.controller'
-import {
-  deleteAccountByIdRouteConfig,
-  getAccountByIdRouteConfig,
-  signInRouteConfig,
-  signUpRouteConfig,
-  updateAccountByIdRouteConfig,
-} from './account.route.config'
 
 export async function accountRoutes(server: FastifyInstance) {
-  server.post(signInRouteConfig.path, signInRouteConfig.options, signInHandler)
+  server.post(
+    '/signin',
+    {
+      schema: {
+        body: $ref('signInInputSchema'),
+        response: {
+          200: $ref('signInResponseSchema'),
+          401: $ref('unAuthorizedResponseSchema'),
+        },
+      },
+    },
+    signInHandler
+  )
 
-  server.post(signUpRouteConfig.path, signInRouteConfig.options, signUpHandler)
+  server.post(
+    '/signup',
+    {
+      schema: {
+        body: $ref('signUpInputSchema'),
+        response: {
+          201: $ref('signUpResponseSchema'),
+          401: $ref('unAuthorizedResponseSchema'),
+        },
+      },
+    },
+    signUpHandler
+  )
 
-  server.put(updateAccountByIdRouteConfig.path, updateAccountByIdRouteConfig.options, updateAccountByIdHandler)
+  server.put(
+    '/:id',
+    {
+      schema: {
+        body: $ref('updateAccountByIdInputSchema'),
+        response: {
+          201: $ref('updateAccountByIdResponseSchema'),
+          404: $ref('notFoundResponseSchema'),
+        },
+      },
+    },
+    updateAccountByIdHandler
+  )
 
-  server.delete(deleteAccountByIdRouteConfig.path, deleteAccountByIdRouteConfig.options, deleteAccountByIdHandler)
+  server.delete(
+    '/:id',
+    {
+      schema: {
+        response: {
+          200: $ref('deleteAccountByIdResponseSchema'),
+          404: $ref('notFoundResponseSchema'),
+        },
+      },
+    },
+    deleteAccountByIdHandler
+  )
 
-  server.get(getAccountByIdRouteConfig.path, getAccountByIdRouteConfig.options, getAccountByIdHandler)
+  server.get(
+    '/:id',
+    {
+      schema: {
+        response: {
+          200: $ref('getAccountByIdResponseSchema'),
+          404: $ref('notFoundResponseSchema'),
+        },
+      },
+    },
+    getAccountByIdHandler
+  )
 }

@@ -6,6 +6,7 @@
     "sourceMap": true,
     "composite": true,
     "forceConsistentCasingInFileNames": true,
+    "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
     "skipLibCheck": true,

@@ -10,6 +10,8 @@ export const accountWithRolesSchema = AccountModel.omit({ password: true }).exte
   roles: z.array(RoleModel),
 })
 export type AccountWithRoles = z.infer<typeof accountWithRolesSchema>
+export const notFoundResponseSchema = z.object({ message: z.string() })
+export const unAuthorizedResponseSchema = z.object({ message: z.string() })
 
 export type ByIdParam = {
   id: string
@@ -56,4 +58,6 @@ export const { schemas: accountSchemas, $ref } = buildJsonSchemas({
   updateAccountByIdResponseSchema,
   deleteAccountByIdResponseSchema,
   getAccountByIdResponseSchema: accountWithRolesSchema,
+  notFoundResponseSchema,
+  unAuthorizedResponseSchema,
 })

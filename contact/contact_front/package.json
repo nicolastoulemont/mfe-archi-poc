@@ -43,7 +43,7 @@
     "concurrently": "^7.4.0",
     "css-loader": "6.7.1",
     "html-webpack-plugin": "5.5.0",
-    "msw": "^0.47.3",
+    "msw": "^0.47.4",
     "msw-storybook-addon": "^1.6.3",
     "postcss": "8.4.16",
     "postcss-loader": "4.3.0",

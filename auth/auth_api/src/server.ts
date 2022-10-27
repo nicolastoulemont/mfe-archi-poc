@@ -5,9 +5,8 @@ import swagger from '@fastify/swagger'
 import swaggerUi from '@fastify/swagger-ui'
 import { withRefResolver } from 'fastify-zod'
 import { accountRoutes } from './modules/account/account.route'
-import { accountSchemas, signInResponseSchema } from './modules/account/account.schema'
+import { accountSchemas } from './modules/account/account.schema'
 import { version } from '../package.json'
-import { generateMock } from '@anatine/zod-mock'
 
 export function buildServer() {
   const server = fastify()
