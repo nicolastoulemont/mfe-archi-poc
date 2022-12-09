@@ -1,4 +1,4 @@
-import { Account, Role } from '@poc/auth_database'
+import type { Account, Role } from '@poc/auth_database'
 import { API_URL } from '../../constant'
 
 export type IAccountByIdBody = Omit<Account, 'id'>

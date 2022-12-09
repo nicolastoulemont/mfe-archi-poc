@@ -4,10 +4,10 @@
   "private": true,
   "license": "MIT",
   "workspaces": [
-    "apps/**",
-    "packages/**",
-    "auth/**",
-    "contact/**"
+    "apps/*",
+    "packages/*",
+    "auth/*",
+    "contact/*"
   ],
   "scripts": {
     "build": "turbo run build",

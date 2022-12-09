@@ -1,14 +1,14 @@
 $ webpack --mode production
 assets by chunk 224 KiB (id hint: vendors)
-  asset 316.js 130 KiB [emitted] [minimized] (id hint: vendors) 1 related asset
-  asset 34.js 48.8 KiB [emitted] [minimized] (id hint: vendors) 1 related asset
-  asset 295.js 45.3 KiB [emitted] [minimized] (id hint: vendors) 1 related asset
-asset 582.js 16.9 KiB [emitted] [minimized] 1 related asset
-asset main.js 7.36 KiB [emitted] [minimized] (name: main)
-asset 784.js 6.44 KiB [emitted] [minimized] 1 related asset
-asset 199.js 1.05 KiB [emitted] [minimized]
-asset 417.js 1.05 KiB [emitted] [minimized]
-asset index.html 267 bytes [emitted]
+  asset 316.js 130 KiB [compared for emit] [minimized] (id hint: vendors) 1 related asset
+  asset 34.js 48.8 KiB [compared for emit] [minimized] (id hint: vendors) 1 related asset
+  asset 295.js 45.3 KiB [compared for emit] [minimized] (id hint: vendors) 1 related asset
+asset 582.js 16.9 KiB [compared for emit] [minimized] 1 related asset
+asset main.js 7.36 KiB [compared for emit] [minimized] (name: main)
+asset 784.js 6.44 KiB [compared for emit] [minimized] 1 related asset
+asset 199.js 1.05 KiB [compared for emit] [minimized]
+asset 417.js 1.05 KiB [compared for emit] [minimized]
+asset index.html 267 bytes [compared for emit]
 orphan modules 213 KiB [orphan] 30 modules
 runtime modules 19.4 KiB 13 modules
 built modules 460 KiB (javascript) 180 bytes (share-init) 168 bytes (consume-shared) 12 bytes (remote) [built]
@@ -23,4 +23,4 @@ built modules 460 KiB (javascript) 180 bytes (share-init) 168 bytes (consume-sha
   remote-module modules 12 bytes (remote) 12 bytes (share-init)
     remote contact_front 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
     remote auth_front 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
-shell (webpack 5.74.0) compiled successfully in 2608 ms
+shell (webpack 5.74.0) compiled successfully in 2057 ms
