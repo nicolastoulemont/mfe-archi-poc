@@ -2,7 +2,7 @@
   "name": "@poc/contact_api",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc -b",
     "dev": "tsnd --exit-child src/index.ts"

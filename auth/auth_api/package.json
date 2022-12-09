@@ -2,7 +2,7 @@
   "name": "@poc/auth_api",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "private": true,
   "scripts": {
     "build": "tsc -b",
@@ -25,7 +25,7 @@
     "@fastify/swagger": "8.0.0",
     "@fastify/swagger-ui": "1.1.0",
     "@poc/ports-map": "*",
-    "@types/node": "18.11.3",
+    "@types/node": "18.11.12",
     "@types/tap": "15.0.7",
     "sinon": "13.0.1",
     "ts-node": "10.9.1",

@@ -1,10 +1,10 @@
 {
   "name": "@poc/auth_mocks",
   "version": "1.0.0",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf ./build",
+    "clean": "rm -rf ./dist",
     "build": "yarn clean && tsc -b",
     "dev": "tsc -w",
     "gen:mocks": "npx msw-auto-mock http://localhost:3002/docs/json --base-url http://localhost:3002 -o ./src/index.ts"

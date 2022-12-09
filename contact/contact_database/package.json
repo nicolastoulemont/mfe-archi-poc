@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "author": "ntoulemont",
   "license": "ISC",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "private": true,
   "workspaces": {
     "nohoist": [
@@ -21,8 +21,8 @@
     "seed": "npx ts-node src/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "4.5.0",
-    "prisma": "4.5.0"
+    "@prisma/client": "4.7.1",
+    "prisma": "4.7.1"
   },
   "devDependencies": {
     "@types/node": "18.7.18",

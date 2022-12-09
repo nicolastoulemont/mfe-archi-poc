@@ -1,5 +1,26 @@
-[33mshell:build[0m: cache hit, replaying output [2m94e1cd9b4f6c4516[0m
-[33mshell:build: [0m
-[33mshell:build: [0m> shell@1.0.0 build /Users/nicolastoulemont/Code/mfe-archi-poc/apps/shell
-[33mshell:build: [0m> webpack --mode production
-[33mshell:build: [0m
+$ webpack --mode production
+assets by chunk 224 KiB (id hint: vendors)
+  asset 316.js 130 KiB [emitted] [minimized] (id hint: vendors) 1 related asset
+  asset 34.js 48.8 KiB [emitted] [minimized] (id hint: vendors) 1 related asset
+  asset 295.js 45.3 KiB [emitted] [minimized] (id hint: vendors) 1 related asset
+asset 582.js 16.9 KiB [emitted] [minimized] 1 related asset
+asset main.js 7.36 KiB [emitted] [minimized] (name: main)
+asset 784.js 6.44 KiB [emitted] [minimized] 1 related asset
+asset 199.js 1.05 KiB [emitted] [minimized]
+asset 417.js 1.05 KiB [emitted] [minimized]
+asset index.html 267 bytes [emitted]
+orphan modules 213 KiB [orphan] 30 modules
+runtime modules 19.4 KiB 13 modules
+built modules 460 KiB (javascript) 180 bytes (share-init) 168 bytes (consume-shared) 12 bytes (remote) [built]
+  javascript modules 454 KiB 41 modules
+  provide-module modules 168 bytes 4 modules
+  consume-shared-module modules 168 bytes
+    consume shared module (default) react@^18.2.0 (singleton) (fallback: ../../node_modules/react/index.js) 42 bytes [built] [code generated]
+    + 3 modules
+  asset modules 5.52 KiB
+    data:image/svg+xml,%3Csvg width=%27.. 2.39 KiB [built] [code generated]
+    + 3 modules
+  remote-module modules 12 bytes (remote) 12 bytes (share-init)
+    remote contact_front 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+    remote auth_front 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+shell (webpack 5.74.0) compiled successfully in 2608 ms

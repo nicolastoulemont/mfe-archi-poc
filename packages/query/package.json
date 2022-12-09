@@ -1,10 +1,10 @@
 {
   "name": "@poc/query",
   "version": "1.0.0",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf ./build",
+    "clean": "rm -rf ./dist",
     "build": "yarn clean && tsc -b"
   },
   "license": "MIT",

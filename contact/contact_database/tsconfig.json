@@ -9,11 +9,11 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "skipLibCheck": true,
-    "outDir": "build",
+    "outDir": "dist",
     "rootDir": "src",
     "isolatedModules": true,
     "esModuleInterop": true
   },
   "include": ["src/**/*"],
-  "exclude": ["build", "node_modules"]
+  "exclude": ["dist", "node_modules"]
 }

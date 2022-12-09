@@ -4,12 +4,11 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "composite": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "outDir": "build",
+    "outDir": "dist",
     "rootDir": "src",
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -17,5 +16,5 @@
     "baseUrl": "."
   },
   "include": ["src"],
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "dist"]
 }
