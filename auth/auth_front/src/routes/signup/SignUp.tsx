@@ -1,4 +1,4 @@
-import { Form, ActionFunctionArgs, redirect } from 'react-router-dom'
+import { Form, ActionFunctionArgs, redirect, Link } from 'react-router-dom'
 
 import { signUp } from './SignUp.http'
 
@@ -20,26 +20,46 @@ export const action =
 
 export function SignUp() {
   return (
-    <Form method='post' id='signup-form'>
-      <div>
-        <h2>Credentials</h2>
-        <div style={{ display: 'block' }}>
+    <div className='w-full h-screen flex items-center justify-center bg-gray-100'>
+      <Form method='post' className='bg-white rounded-lg p-12 space-y-5 w-[400px]'>
+        <h1 className='text-3xl font-medium text-center'>Sign up</h1>
+        <div className='flex flex-col'>
           <label htmlFor='email'>Email</label>
-          <input placeholder='Email' aria-label='Email' type='text' name='email' id='email' />
+          <input
+            className='rounded-lg border-gray-300'
+            placeholder='Email'
+            required
+            type='email'
+            name='email'
+            id='email'
+          />
         </div>
-        <div>
+        <div className='flex flex-col'>
           <label htmlFor='password'>Password</label>
-          <input placeholder='Password' aria-label='Password' type='password' name='password' id='password' />
+          <input
+            className='rounded-lg border-gray-300'
+            placeholder='Password'
+            required
+            minLength={8}
+            type='password'
+            name='password'
+            id='password'
+          />
         </div>
-      </div>
-      <div>
-        <label htmlFor='role'>Choose a role</label>
-        <select name='role' id='role'>
-          <option value='employee'>employee</option>
-          <option value='admin'>Admin</option>
-        </select>
-      </div>
-      <button type='submit'>Sign up</button>
-    </Form>
+
+        <div className='w-full flex justify-between items-end'>
+          <div className='flex flex-col space-y-2'>
+            <p className='text-sm'> Already have an account ?</p>
+            <Link to='/signin' className='underline underline-offset-1 font-medium'>
+              Sign In
+            </Link>
+          </div>
+
+          <button type='submit' className='px-4 py-2 h-fit bg-blue-500 rounded-lg text-white font-medium'>
+            Sign up
+          </button>
+        </div>
+      </Form>
+    </div>
   )
 }

@@ -14,7 +14,6 @@
   },
   "scripts": {
     "build": "rimraf ./dist && tsc -b",
-    "dev": "tsc --watch",
     "push": "yarn prisma db push",
     "gen": "yarn prisma generate",
     "studio": "yarn prisma studio",

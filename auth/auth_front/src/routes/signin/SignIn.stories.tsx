@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { SignIn, action } from './SignIn'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
 import { queryClient } from '@poc/query'
-import { handlers } from '@poc/auth_mocks'
+// import { handlers } from '@poc/auth_mocks'
 import ErrorPage from '../../error-page'
 
 export default {
@@ -34,8 +34,8 @@ const Template: ComponentStory<typeof SignIn> = (args: any) => <SignIn {...args}
 
 export const Default = Template.bind({})
 
-Default.parameters = {
-  msw: {
-    handlers,
-  },
-}
+// Default.parameters = {
+//   msw: {
+//     handlers,
+//   },
+// }

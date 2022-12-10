@@ -1,5 +1,6 @@
 import { queryClient, QueryClientProvider } from '@poc/query'
 import { initialize, mswDecorator } from 'msw-storybook-addon'
+import '../src/tailwind.css'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
