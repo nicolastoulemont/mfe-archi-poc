@@ -1,19 +1,10 @@
 {
+  "extends": "../../configs/typescript/tsconfig.pkg",
   "compilerOptions": {
-    /* Basic Options */
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "target": "ES2020",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
-    "skipLibCheck": true,
-    "outDir": "dist",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "rootDir": "src",
-    "isolatedModules": true,
-    "esModuleInterop": true
+    "outDir": "dist"
   },
   "include": ["src/**/*"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["node_modules", "dist"]
 }

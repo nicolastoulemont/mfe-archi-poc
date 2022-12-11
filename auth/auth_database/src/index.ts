@@ -16,4 +16,4 @@ if (typeof window === 'undefined') {
   }
 }
 
-export default prisma
+export { prisma }

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    // I/O
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    // Emitted code
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    // Code quality rules
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    // Import related
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true
+  }
+}

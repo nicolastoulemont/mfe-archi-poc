@@ -6,7 +6,6 @@ import swaggerUi from '@fastify/swagger-ui'
 import { withRefResolver } from 'fastify-zod'
 import { accountRoutes } from './modules/account/account.route'
 import { accountSchemas } from './modules/account/account.schema'
-import { version } from '../package.json'
 
 export function buildServer() {
   const server = fastify()
@@ -47,7 +46,7 @@ export function buildServer() {
         info: {
           title: 'Auth API',
           description: 'PoC authentication api',
-          version,
+          version: '1.0.0',
         },
       },
     })

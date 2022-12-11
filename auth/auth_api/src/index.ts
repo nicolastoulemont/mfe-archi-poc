@@ -1,5 +1,4 @@
 require('dotenv').config()
-
 import { prisma } from '@poc/auth_database'
 import { PORTS_MAP } from '@poc/ports-map'
 import { buildServer } from './server'

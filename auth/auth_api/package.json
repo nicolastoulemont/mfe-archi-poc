@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "tsc -b",
-    "dev": "tsnd --exit-child src/index.ts",
+    "dev": "tsnd --exit-child --transpile-only src/index.ts",
     "test": "tap --node-arg=--require=ts-node/register"
   },
   "dependencies": {
@@ -25,12 +25,15 @@
     "@fastify/swagger": "8.0.0",
     "@fastify/swagger-ui": "1.1.0",
     "@poc/ports-map": "*",
+    "@swc/core": "^1.3.22",
+    "@swc/helpers": "^0.4.14",
     "@types/node": "18.11.12",
     "@types/tap": "15.0.7",
+    "regenerator-runtime": "^0.13.11",
     "sinon": "13.0.1",
     "ts-node": "10.9.1",
     "ts-node-dev": "2.0.0",
-    "typescript": "4.8.3",
+    "typescript": "4.9.4",
     "zod-prisma": "0.5.4"
   }
 }

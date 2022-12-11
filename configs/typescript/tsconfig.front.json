@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.common",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "allowJs": true,
+    "skipLibCheck": true
+  }
+}
