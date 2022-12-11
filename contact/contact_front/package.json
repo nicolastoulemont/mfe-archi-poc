@@ -21,6 +21,14 @@
     "clean": "rm -rf dist"
   },
   "license": "MIT",
+  "dependencies": {
+    "@poc/query": "1.0.0",
+    "history": "5.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.0",
+    "match-sorter": "^6.3.1"
+  },
   "devDependencies": {
     "@babel/core": "7.18.9",
     "@babel/plugin-transform-runtime": "7.18.9",
@@ -55,14 +63,6 @@
     "webpack-cli": "4.10.0",
     "webpack-dev-server": "4.11.1",
     "@poc/ports-map": "*"
-  },
-  "dependencies": {
-    "@poc/query": "1.0.0",
-    "history": "5.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.0",
-    "match-sorter": "^6.3.1"
   },
   "msw": {
     "workerDirectory": "public"

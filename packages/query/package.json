@@ -8,11 +8,11 @@
     "build": "yarn clean && tsc -b"
   },
   "license": "MIT",
-  "devDependencies": {
-    "typescript": "4.8.3"
-  },
   "dependencies": {
     "@tanstack/react-query": "^4.3.4",
     "react": "18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "4.8.3"
   }
 }
