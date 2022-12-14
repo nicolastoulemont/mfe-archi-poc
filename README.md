@@ -1,13 +1,17 @@
 # Federated modules POC
 
-This proof of concept combines is architected around dynamically loaded sub-apps represented as routes in a shell app.
-It aims to test the following things in order to help large engineering teams split in feature teams to iterate safely, quickly and independently on a product:
+This proof of concept aims to try out how to organize a monorepo in order allow feature teams to iterate indenpendently on one or more products.
 
-- [x] how dynamically loaded routes can be added to the shell main router using the react-router v6.4 packages and features.
-- [x] how to setup storybook development environment in the sub-apps to enable feature teams working on it independently from other teams:
+It aims to try out the following:
 
+- [x] Split out the different domains within the product in separate and scoped workspaces with:
+- [x] Micro-frontends to allow to teams to independly deploy their frontend.
+- [x] Workspace scoped webservers
+  - [x] Open-API compliant APIs to support contracts enforcing
+  - [ ] Generated HTTP clients from the open-API schemas
+  - [ ] Generated HTTP mock clients from the open-API schemas
+- [x] Workspace scoped frontend devolpment environment with storybook.
   - [x] storybook react-router setup
-  - [x] storybook msw (http mocking layer)
-
-- [x] how to share a client side http caching library instance between the shell and the sub-apps.
-- [x] how to share a global state management library between the shell and the sub-apps.
+  - [x] storybook msw (http mocking) setup
+- [x] Shared client global state store instance between the shells and sub-apps
+- [x] Shared client http caching library instance between the shells and sub-apps
