@@ -6,6 +6,7 @@
     // Emitted code
     "target": "ESNext",
     "lib": ["ESNext"],
+    // Modules
     "module": "CommonJS",
     "moduleResolution": "Node",
     // Code quality rules

@@ -1,22 +1,10 @@
 {
+  "extends": "../../configs/typescript/tsconfig.pkg",
   "compilerOptions": {
-    /* Basic Options */
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "composite": true,
-    "forceConsistentCasingInFileNames": true,
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "outDir": "dist",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "rootDir": "src",
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "jsx": "react",
-    "baseUrl": "."
+    "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
